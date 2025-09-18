@@ -1,0 +1,24 @@
+{
+    "redirects": [
+        {
+            "source": "/home",
+            "destination": "https://www.noomstuff.com",
+            "permanent": true
+        },
+        {
+            "source": "/link",
+            "destination": "https://www.noomstuff.com/linktree.html",
+            "permanent": true
+        },
+        {
+            "source": "/links",
+            "destination": "https://www.noomstuff.com/linktree.html",
+            "permanent": true
+        },
+        {
+            "source": "/linktree",
+            "destination": "https://www.noomstuff.com/linktree.html",
+            "permanent": true
+        }
+    ]
+}
