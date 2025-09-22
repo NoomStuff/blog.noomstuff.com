@@ -26,6 +26,34 @@
     --spacing-3: 2rem;
 }
 
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 6px;
+    border: 2px solid var(--background-color-dark);
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--background-color-dark);
+}
+
+
 html,
 body {
     scroll-behavior: smooth;
@@ -261,19 +289,17 @@ h6 {
     margin: 0;
 }
 
-.post {
-
-    h2 {
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid var(--background-color-light);
-    }
+.post h2 {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--background-color-light);
 }
 
 p {
     color: var(--text-color-light);
     font-size: 1.1em;
     font-weight: 400;
+    
     line-height: 1.7;
     margin: 0;
     margin: 1rem 0;
@@ -548,7 +574,7 @@ pre[data-header]::before {
         padding-bottom: var(--spacing-2);
         padding-right: var(--spacing-1);
         width: fit-content;
-        border-bottom: 1px solid var(--background-color-light);
+        border-bottom: 2px solid var(--background-color-light);
     }
 }
 
