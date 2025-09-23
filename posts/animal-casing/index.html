@@ -4,12 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/style.css">
-    <script src="../../js/code-blocks.js" defer></script>
     <script src="https://kit.fontawesome.com/a7bbea504e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/progress-bar.js" defer></script>
+    <script src="../../js/code-blocks.js" defer></script>
+    
     <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <meta name="description" content="NoomStuff's blog">
-    <meta name="keywords" content="NoomStuff, blog, games, gamedev, art, artist, development, gaming, indie games">
+    <meta name="description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3,6 million new casing methods.">
+    <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
+
+    <meta property="og:title" content="How I Invented 3,668,328 New Ways To Case Your Code">
+    <meta property="og:description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3,6 million new casing methods.">
+    <meta property="og:image" content="https://blog.noomstuff.com/posts/animal-casing/thumbnail.png">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How I Invented 3,668,328 New Ways To Case Your Code">
+    <meta name="twitter:description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
+    <meta name="twitter:image" content="https://blog.noomstuff.com/posts/animal-casing/thumbnail.png">
+    <meta name="twitter:creator" content="@NoomStuff">
+
     <title>Animal Casing | NoomStuff's Blog</title>
 </head>
 
@@ -27,26 +41,26 @@
         <section class="post">
             <div class="post-data">
                 <p>Written by NoomStuff</p>
-                <p>September 20th 2025</p>
+                <h6>September 24th 2025</h6>
             </div>
             <h2>You... what?</h2>
             <p>This week I was at work chatting with a co-worker, when different casing types came up. I was talking about a JavaScript file that indexed our Vue components, a step in the script was converting names from PascalCase into kebab-case.</p>
-            <p>"Oh camelCase" he said, which confused me, he told me to look it up and explained that PascalCase is sometimes called StudlyCase or (upper) CamelCase.</p>
+            <p>"Oh camelCase" he said, which confused me, he told me to look it up, explaining that PascalCase is sometimes called StudlyCase or (upper) CamelCase.</p>
             <p>Uhm, WHAT!?</p>
 
             <h3>camelCase vs CamelCase</h3>
             <div class="row">
-                <P>You see, the reason its called camelCase is because the variable name starts out flat, then has a hump at the start of every word...<br>Except, that is not actually a camel. It's a dromedary! (Which is a type of camel but still). A regular camel has 2 humps, not 1.<br>So that explains why there are 2 camel casing methods.</P>
-                <figure><img src="camel-case.png" alt="A camel and a dromedary side-by-side"></figure>
+                <P>You see, the reason it's called camelCase is because the variable name starts out flat, then has a hump at the start of every word...<br>Except, that is not actually a camel. It's a dromedary! (Which is a type of camel but still). A regular camel has 2 humps, not 1.<br>So that explains why there are 2 camel casing methods.</P>
+                <figure><img src="camel-case.png" class="rigid" alt="A camel and a dromedary side-by-side"></figure>
             </div>
-            <p>All in all, an interesting but useless sidetrack.<br>But then, the co-worker jokingly suggested writing a script that generates new casing names by randomly picking an animal, the  adding "casing" to the end. Now that idea is just too funny to pass up. I thought it would be even more funny if it changed the capitalisation of a message you enter too.</p>
+            <p>All in all, an interesting but useless sidetrack.<br>But then, the co-worker jokingly suggested writing a script that generates new casing names by randomly picking an animal, the adding "casing" to the end. Now that idea is just too funny to pass up. I thought it would be even more funny if it changed the capitalization of a message you enter too.</p>
 
             <h3>Inventing new casing</h3>
             <p>Not wanting to waste too much work time, I went to the place where all terrible ideas go.</p>
-            <figure><img src="chatgpt.png" alt="A prompt to ChatGPT reading: DONTFORGET TO FILL THIS OUT LATER"></figure>
-            <p>The script ChatGPT provided needed only a few tweaks to satisfy my goblin brain (for now). And in only a couple of minutes, I ended up with this python file:</p>
+            <figure><img src="chatgpt.png" alt="A prompt to ChatGPT reading: 'generate me a Python script that takes an input and randomises casing, then it returns that as [RandomAnimalNameFromAList]casing: [message]'"></figure>
+            <p>The script ChatGPT provided needed only a few tweaks to satisfy my goblin brain (for now). And in only a couple of minutes, I ended up with this Python file:</p>
 
-            <pre class="collapsible" data-header="ANIMaL-caSING.py"><code class="language-python">import random
+            <pre class="collapsible" data-header="ANIMaL-caSING.py"><code class="language-Python">import random
 
 def randomise_casing(text: str) -> str:
     return ''.join(
@@ -105,10 +119,10 @@ Press Enter to exit...</code></pre>
 
             <h2>What if better tho?</h2>
             <p>Okay jumbling a string is fun and all, but not very realistic. After all, more realism is <em>obviously</em> what this script needs!</p>
-            <p>What if we don't just change the letters to uppercase or lowercase randomly, but ran it though a random set of premade functions instead? Interesting idea, I thought. So I started work on my next 10 minute side-project...</p>
-            <p>A mere 3 hours later I finally finished the most hillariously overengineered script I have ever made:</p>
-            
-            <pre class="collapsible" data-header="ANIMaL—cAsING—genERAToR—V3.py"><code class="language-python">import random
+            <p>What if we don't just change the letters to uppercase or lowercase randomly, but ran it through a random set of premade functions instead? Interesting idea, I thought. So I started work on my next 10 minute side-project...</p>
+            <p>A mere 3 hours later I finally finished the most hilariously overengineered script I have ever made:</p>
+
+            <pre class="collapsible" data-header="ANIMaL—cAsING—genERAToR—V3.py"><code class="language-Python">import random
 import re
 
 # Make sure there are spaces
@@ -383,7 +397,7 @@ _FoLLoW_NoomstufF_on_yt_AnD_bsKY
 </code></pre>
 
             <h3>Okay, that's cool and all Noom, but did you just clickbait me?</h3>
-            <p>Uhhm, maybe? I did promise you more than 3,6 million ways to case. Let's do some math...</p>
+            <p>Uhhm, maybe? I did promise you more than 3.6 million ways to case. Let's do some math...</p>
 
             <pre data-header="Calculations"><code># Base changes
 Base operations  : <span class="input">6</span>  (none, upper, lower, alternate(2), random)
@@ -406,18 +420,21 @@ Total word variations → <span class="input">5994</span>
 </code></pre>
 
             <p>This number is not accounting for the different animals you get, or most variations that depend on your input. So in most cases the possible variations are actually way higher. (Up to 10,337,313,420 for "hello world"!!)<br>So yeah, get REVERSE CLICKBAITED.</p>
-            <p>But what is the actual number? I don't know! Probably somewhere inbetween 1 and infinity.</p>
-            
-            <p><br>Now, you might be asking what the point of any of this was.</p>
-            
+            <p>But what is the actual number? I don't know! Probably somewhere between 1 and infinity.</p>
+
+            <p><br>Now, you might be asking what the point of any of this was.<br><br><br><br></p>
+
             <article class="post-end">
                 <div>
-                    <h3>End of post</h3>
-                    <p>Thanks for reading!</p>
+                    <h3>Thanks for reading!</h3>
+                    <h6>Consider checking these out.</h6>
                 </div>
-                <div class="button-group>
-                
+                <div class="button-group">
+                    <a href="https://www.noomstuff.com" class="button"><i class="fa-solid fa-globe"></i> NoomStuff.com</a>
+                    <a href="../../" class="button"><i class="fa-solid fa-arrow-left"></i> All Posts</a>
+                    <a href="https://www.noomstuff.com/linktree" class="button"><i class="fa-solid fa-heart"></i> My Socials</a>
                 </div>
+                <a href="oopsiforgotthelink" class="button"><i class="fa-brands fa-github"></i>Checkout GitHub Repo</a>
             </article>
         </section>
     </main>

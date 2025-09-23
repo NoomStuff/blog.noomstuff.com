@@ -24,35 +24,33 @@
     --spacing-1: 0.5rem;
     --spacing-2: 1rem;
     --spacing-3: 2rem;
+
+    --border-divider: 2px solid var(--background-color-light)
 }
 
 /* ===== Scrollbar ===== */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    display: none;
 }
 
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
-    border-radius: 6px;
-    border: 2px solid var(--background-color-dark);
-    transition: background 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
-}
-
-/* Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary-color) var(--background-color-dark);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: -5%;
+    height: 4px;
+    opacity: 0.75;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary-color-light), var(--secondary-color-light));
+    z-index: 9999;
+    border-bottom-right-radius: 4px;
+    transition: width 0.25s cubic-bezier(0.2, 0.8, 0.3, 1.4);
+}
 
 html,
 body {
@@ -132,9 +130,12 @@ section {
     position: relative;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: var(--spacing-3);
-    height: 300px;
-    max-height: 300px;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
 }
 
 .tile::before {
@@ -155,18 +156,27 @@ section {
     opacity: 1;
 }
 
-.tile>figure {
+.tile > figure {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    width: 400px;
-    min-height: 300px;
-    min-width: 400px;
+
+    flex-shrink: 0;
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+
     border-radius: var(--spacing-1);
     overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        max-height: 300px;
+        min-width: unset;
+        aspect-ratio: unset;
+    }
 }
+
 
 .tile>figure:has(video)>* {
     position: absolute;
@@ -239,7 +249,7 @@ figure>* {
     width: 100%;
 }
 
-figure .contain {
+figure :not(.rigid) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -292,14 +302,14 @@ h6 {
 .post h2 {
     margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--background-color-light);
+    border-bottom: var(--border-divider);
 }
 
 p {
     color: var(--text-color-light);
     font-size: 1.1em;
     font-weight: 400;
-    
+
     line-height: 1.7;
     margin: 0;
     margin: 1rem 0;
@@ -324,8 +334,15 @@ i {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4em;
-    color: var(--text-color);
+    font-size: 1em;
+    scale: 1.25;
+    color: inherit;
+}
+
+i.fa-brands {
+    scale: 1.5;
+    margin-right: 0.25rem;
+    margin-left: -0.25rem;
 }
 
 /* ===== Lists ===== */
@@ -388,6 +405,18 @@ ol li::marker {
     }
 }
 
+.button-group {
+    display: flex;
+    flex-direction: row !important;
+    gap: var(--spacing-2);
+}
+
+.button-group>* {
+    flex: 1;
+}
+
+
+/* ===== Post ===== */
 .post-date {
     font-size: 0.9em;
     color: var(--text-color-lighter);
@@ -428,16 +457,21 @@ ol li::marker {
 }
 
 .post-end {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    margin-top: var(--spacing-2);
+    margin-top: var(--spacing-3);
     padding-top: var(--spacing-2);
-    border-top: 1px solid var(--background-color-light);
+    gap: var(--spacing-2);
+    border-top: var(--border-divider);
 
     * {
         margin: 0;
     }
 }
 
+
+/* ===== Code Blocks ===== */
 pre {
     background: var(--background-color-light) !important;
     padding: 1rem;
@@ -557,6 +591,14 @@ pre[data-header]::before {
         font-weight: 900;
         letter-spacing: 0.02em;
         text-transform: uppercase;
+
+        @media screen and (max-width: 960px) {
+            font-size: 4.5rem;
+        }
+
+        @media screen and (max-width: 640px) {
+            font-size: 3rem;
+        }
     }
 
     * {
@@ -574,7 +616,7 @@ pre[data-header]::before {
         padding-bottom: var(--spacing-2);
         padding-right: var(--spacing-1);
         width: fit-content;
-        border-bottom: 2px solid var(--background-color-light);
+        border-bottom: var(--border-divider);
     }
 }
 
