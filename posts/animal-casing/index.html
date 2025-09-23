@@ -30,21 +30,21 @@
                 <p>September 20th 2025</p>
             </div>
             <h2>You... what?</h2>
-            <p>This week a was at work chatting with a co-worker, when different casing types came up. I was talking about a JavaScript file that indexed our Vue components, a step in the script was converting names from PascalCase into kebab-case.</p>
-            <p>He said "Oh camelCase", which confused me, he told me to look it up and explained that PascalCase is sometimes called StudlyCase or CamelCase.</p>
+            <p>This week I was at work chatting with a co-worker, when different casing types came up. I was talking about a JavaScript file that indexed our Vue components, a step in the script was converting names from PascalCase into kebab-case.</p>
+            <p>"Oh camelCase" he said, which confused me, he told me to look it up and explained that PascalCase is sometimes called StudlyCase or (upper) CamelCase.</p>
             <p>Uhm, WHAT!?</p>
 
-            <h3>camelCase vs CamelCase?</h3>
+            <h3>camelCase vs CamelCase</h3>
             <div class="row">
                 <P>You see, the reason its called camelCase is because the variable name starts out flat, then has a hump at the start of every word...<br>Except, that is not actually a camel. It's a dromedary! (Which is a type of camel but still). A regular camel has 2 humps, not 1.<br>So that explains why there are 2 camel casing methods.</P>
-                <figure><img src="camel-case.png" alt=""></figure>
+                <figure><img src="camel-case.png" alt="A camel and a dromedary side-by-side"></figure>
             </div>
-            <p>All in all, an interesting but useless sidetrack.<br>But then, my co-worker jokingly suggested writing a script that generates new casing names by randomly picking an animal and adding "casing" to it. Now that idea is just too funny to pass up. I thought it would be even more funny if it changed the capitalisation of a message too.</p>
+            <p>All in all, an interesting but useless sidetrack.<br>But then, the co-worker jokingly suggested writing a script that generates new casing names by randomly picking an animal, the  adding "casing" to the end. Now that idea is just too funny to pass up. I thought it would be even more funny if it changed the capitalisation of a message you enter too.</p>
 
             <h3>Inventing new casing</h3>
             <p>Not wanting to waste too much work time, I went to the place where all terrible ideas go.</p>
-            <figure><img src="chatgpt.png" alt=""></figure>
-            <p>The script ChatGPT provided needed only a few tweaks to satisfy my goblin brain (for now). I ended up with this python file:</p>
+            <figure><img src="chatgpt.png" alt="A prompt to ChatGPT reading: DONTFORGET TO FILL THIS OUT LATER"></figure>
+            <p>The script ChatGPT provided needed only a few tweaks to satisfy my goblin brain (for now). And in only a couple of minutes, I ended up with this python file:</p>
 
             <pre class="collapsible" data-header="ANIMaL-caSING.py"><code class="language-python">import random
 
@@ -105,8 +105,9 @@ Press Enter to exit...</code></pre>
 
             <h2>What if better tho?</h2>
             <p>Okay jumbling a string is fun and all, but not very realistic. After all, more realism is <em>obviously</em> what this script needs!</p>
-            <p>Instead of just changing the letters to uppercase or lowercase randomly, what if we ran it though a random set of premade functions? Interesting idea, I thought. So I started work on my next 10 minute side-project...</p>
+            <p>What if we don't just change the letters to uppercase or lowercase randomly, but ran it though a random set of premade functions instead? Interesting idea, I thought. So I started work on my next 10 minute side-project...</p>
             <p>A mere 3 hours later I finally finished the most hillariously overengineered script I have ever made:</p>
+            
             <pre class="collapsible" data-header="ANIMaL—cAsING—genERAToR—V3.py"><code class="language-python">import random
 import re
 
@@ -377,12 +378,12 @@ Decently   lONG   Testing   mESSAGE   Because   wHY   Not   yA   Know?
 </code></pre>
             <pre data-header="Command Prompt"><code>> <span class="input">FOLLOW NOOMSTUFF ON YT AND BSKY</span>
 
-DINgO_CAsInG:
-FoLLoW_NoomstufF_on_yt_AnD_bsKY
+_DINgO_CAsInG:
+_FoLLoW_NoomstufF_on_yt_AnD_bsKY
 </code></pre>
 
             <h3>Okay, that's cool and all Noom, but did you just clickbait me?</h3>
-            <p>Uhhm, maybe? I did promise 3,6 million ways to case. Let's do some math...</p>
+            <p>Uhhm, maybe? I did promise you more than 3,6 million ways to case. Let's do some math...</p>
 
             <pre data-header="Calculations"><code># Base changes
 Base operations  : <span class="input">6</span>  (none, upper, lower, alternate(2), random)
@@ -403,9 +404,21 @@ Total word variations → <span class="input">5994</span>
 # Total variants
 6 (space) * 6 (base) * 5994 (words) * 17 (final) = <span class="input">3,668,328</span>
 </code></pre>
-            <p>This number is not accounting for the different animals you get, or most variations that depend on your input. So in most cases the possible variations are actually way higher. (Up to 10,337,313,420 for "hello world"!!)<br>So yeah, get REVERSE CLICKBAITED.</p>
 
+            <p>This number is not accounting for the different animals you get, or most variations that depend on your input. So in most cases the possible variations are actually way higher. (Up to 10,337,313,420 for "hello world"!!)<br>So yeah, get REVERSE CLICKBAITED.</p>
             <p>But what is the actual number? I don't know! Probably somewhere inbetween 1 and infinity.</p>
+            
+            <p><br>Now, you might be asking what the point of any of this was.</p>
+            
+            <article class="post-end">
+                <div>
+                    <h3>End of post</h3>
+                    <p>Thanks for reading!</p>
+                </div>
+                <div class="button-group>
+                
+                </div>
+            </article>
         </section>
     </main>
 </body>
