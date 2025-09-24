@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a7bbea504e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/utilities.css">
     <script src="../../js/code-blocks.js" defer></script>
-    
+
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <meta name="description" content="NoomStuff's Blog.">
     <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
@@ -16,14 +18,14 @@
 </head>
 
 <body>
-    <main>
-        <div class="home banner">
+    <main id="home">
+        <div id="banner">
             <h1>The Noom Blog</h1>
             <h6>For the 2 people that care what I have to say</h6>
         </div>
 
         <section class="posts">
-            <article class="tile">
+            <article class="blog tile">
                 <div>
                     <p class="post-date">September 24th 2025</p>
                     <h2>How I Invented 3,668,328 New Ways To Case Your Code</h2>
@@ -35,10 +37,14 @@
                 </figure>
             </article>
 
-            <div class="post-end">
-                <h3>You're caught up!</h3>
-                <h6>Theres only 1 post rn lol</h6>
-            </div>
+            <section>
+                <article id="post-end">
+                    <div>
+                        <h3>You're caught up!</h3>
+                        <h6>Theres only 1 post rn lol</h6>
+                    </div>
+                </article>
+            </section>
         </section>
     </main>
 </body>

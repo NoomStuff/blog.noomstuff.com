@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a7bbea504e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
     <script src="../../js/progress-bar.js" defer></script>
     <script src="../../js/code-blocks.js" defer></script>
-    
+
     <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
     <meta name="description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3,6 million new casing methods.">
     <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
@@ -28,8 +30,8 @@
 </head>
 
 <body>
-    <main>
-        <div class="post banner">
+    <main id="post">
+        <div id="banner">
             <div>
                 <div>
                     <h6>Blog</h6>
@@ -38,24 +40,24 @@
             </div>
         </div>
 
-        <section class="post">
+        <section class="post-content">
             <div class="post-data">
                 <p>Written by NoomStuff</p>
                 <h6>September 24th 2025</h6>
             </div>
-            <h2>You... what?</h2>
+            <h2><i class="fa-solid fa-question"></i>You... what?</h2>
             <p>This week I was at work chatting with a co-worker, when different casing types came up. I was talking about a JavaScript file that indexed our Vue components, a step in the script was converting names from PascalCase into kebab-case.</p>
             <p>"Oh camelCase" he said, which confused me, he told me to look it up, explaining that PascalCase is sometimes called StudlyCase or (upper) CamelCase.</p>
             <p>Uhm, WHAT!?</p>
 
-            <h3>camelCase vs CamelCase</h3>
+            <h3><i class="fa-solid fa-comments"></i>camelCase vs CamelCase</h3>
             <div class="row">
                 <P>You see, the reason it's called camelCase is because the variable name starts out flat, then has a hump at the start of every word...<br>Except, that is not actually a camel. It's a dromedary! (Which is a type of camel but still). A regular camel has 2 humps, not 1.<br>So that explains why there are 2 camel casing methods.</P>
                 <figure><img src="camel-case.png" class="rigid" alt="A camel and a dromedary side-by-side"></figure>
             </div>
             <p>All in all, an interesting but useless sidetrack.<br>But then, the co-worker jokingly suggested writing a script that generates new casing names by randomly picking an animal, the adding "casing" to the end. Now that idea is just too funny to pass up. I thought it would be even more funny if it changed the capitalization of a message you enter too.</p>
 
-            <h3>Inventing new casing</h3>
+            <h3><i class="fa-solid fa-gears"></i>Inventing new casing</h3>
             <p>Not wanting to waste too much work time, I went to the place where all terrible ideas go.</p>
             <figure><img src="chatgpt.png" alt="A prompt to ChatGPT reading: 'generate me a Python script that takes an input and randomises casing, then it returns that as [RandomAnimalNameFromAList]casing: [message]'"></figure>
             <p>The script ChatGPT provided needed only a few tweaks to satisfy my goblin brain (for now). And in only a couple of minutes, I ended up with this Python file:</p>
@@ -117,7 +119,7 @@ HELlo_woRlD
 Press Enter to exit...</code></pre>
             <p>And that was that, only took about 5 minutes too! So I typed in "Animal Casing", named the script whatever it spat out and moved on with my day.</p>
 
-            <h2>What if better tho?</h2>
+            <h2><i class="fa-solid fa-seedling"></i>What if better tho?</h2>
             <p>Okay jumbling a string is fun and all, but not very realistic. After all, more realism is <em>obviously</em> what this script needs!</p>
             <p>What if we don't just change the letters to uppercase or lowercase randomly, but ran it through a random set of premade functions instead? Interesting idea, I thought. So I started work on my next 10 minute side-project...</p>
             <p>A mere 3 hours later I finally finished the most hilariously overengineered script I have ever made:</p>
@@ -357,7 +359,7 @@ if __name__ == "__main__":
                 <li>Has an option to show what steps it took</li>
             </ul>
 
-            <h3>Final result</h3>
+            <h3><i class="fa-solid fa-wand-magic-sparkles"></i>Final result</h3>
             <p>Here's an example of this monolithic waste of time in action:</p>
 
             <pre data-header="Command Prompt"><code>Enter your message:
@@ -396,7 +398,7 @@ _DINgO_CAsInG:
 _FoLLoW_NoomstufF_on_yt_AnD_bsKY
 </code></pre>
 
-            <h3>Okay, that's cool and all Noom, but did you just clickbait me?</h3>
+            <h3><i class="fa-solid fa-crosshairs"></i>Okay, that's cool and all Noom, but did you just clickbait me?</h3>
             <p>Uhhm, maybe? I did promise you more than 3.6 million ways to case. Let's do some math...</p>
 
             <pre data-header="Calculations"><code># Base changes
@@ -422,9 +424,10 @@ Total word variations → <span class="input">5994</span>
             <p>This number is not accounting for the different animals you get, or most variations that depend on your input. So in most cases the possible variations are actually way higher. (Up to 10,337,313,420 for "hello world"!!)<br>So yeah, get REVERSE CLICKBAITED.</p>
             <p>But what is the actual number? I don't know! Probably somewhere between 1 and infinity.</p>
 
-            <p><br>Now, you might be asking what the point of any of this was.<br><br><br><br></p>
-
-            <article class="post-end">
+            <p><br>Now, you might be asking what the point of any of this was...<br><br><br></p>
+        </section>
+        <section>
+            <article id="post-end">
                 <div>
                     <h3>Thanks for reading!</h3>
                     <h6>Consider checking these out.</h6>
