@@ -327,6 +327,10 @@ ol li::marker {
     display: flex;
     flex-direction: row !important;
     gap: var(--spacing-2);
+
+    @media screen and (max-width: 640px) {
+        flex-direction: column;
+    }
 }
 
 .button-group>* {
