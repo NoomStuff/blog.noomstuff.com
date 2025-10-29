@@ -130,6 +130,7 @@ section {
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
+        gap: var(--spacing-2);
     }
 }
 
@@ -138,24 +139,28 @@ section div p:first-child {
 }
 
 figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
-
-    &>* {
-        border-radius: var(--spacing-1);
-    }
+    width: 100%;
+    height: 100%;
 }
 
 figure>* {
-    width: 100%;
+    border-radius: var(--spacing-1);
+    max-width: 100%;
+    max-height: 100%;
 }
 
-figure :not(.rigid) {
-    width: 100%;
-    height: 100%;
+figure:not(.rigid) * {
     object-fit: cover;
 }
 
+figure.limit * {
+    max-height: 400px;
+}
 
 /* ===== Text ===== */
 h1,
@@ -198,27 +203,6 @@ h6 {
     letter-spacing: 0.02em;
     color: var(--text-color-lighter);
     margin: 0;
-}
-
-.post-content h2, .post-content h3  {
-    position: relative;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: var(--border-divider);
-
-    i {
-        position: absolute;
-        top: 50%;
-        left: -1.25rem;
-        transform: translate(-100%, -50%);
-        text-align: end;
-        scale: 1.1;
-        opacity: 0.25;
-
-        @media screen and (max-width: 768px) {
-            display: none;
-        }
-    }
 }
 
 p {
@@ -339,6 +323,13 @@ ol li::marker {
 
 
 /* ===== Code Blocks ===== */
+.code-snippet {
+    background: var(--background-color-light) !important;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--spacing-1);
+}
+
 pre {
     background: var(--background-color-light) !important;
     padding: 1rem;
@@ -407,6 +398,7 @@ pre.collapsible.expanded::after {
 
 pre[data-header] {
     position: relative;
+    padding-top: 2rem !important;
     border-radius: var(--spacing-1);
 }
 
@@ -419,8 +411,8 @@ pre[data-header]::before {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
     font-weight: 400;
-    text-align: right;
-    color: #ccc;
+    text-align: left;
+    color: rgb(255, 255, 255, 0.4);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
     border-top-left-radius: var(--spacing-1);
     border-top-right-radius: var(--spacing-1);

@@ -21,13 +21,16 @@ document.addEventListener("DOMContentLoaded", () =>
     }
 
     loadCSS("https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css");
+
     Promise.all([
         loadJS("https://cdn.jsdelivr.net/npm/prismjs/prism.js"),
+        
+        loadJS("https://cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"),
         loadJS("https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"),
         loadJS("https://cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"),
         loadJS("https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"),
         loadJS("https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"),
-        loadJS("https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js")
+        loadJS("https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"),
     ]).then(() =>
     {
         document.querySelectorAll("pre.collapsible").forEach(pre =>

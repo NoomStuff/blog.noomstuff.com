@@ -292,7 +292,7 @@
     right: 0;
 
     @media screen and (max-width: 768px) {
-        right: var(--spacing-3);
+        display: none;
     }
 }
 
@@ -309,6 +309,28 @@
 .post-data *:nth-child(1) {
     color: var(--text-color-light);
     font-weight: 500;
+}
+
+.post-content h2,
+.post-content h3 {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: var(--border-divider);
+
+    i {
+        position: absolute;
+        top: 50%;
+        left: -1.25rem;
+        transform: translate(-100%, -50%);
+        text-align: end;
+        scale: 1.1;
+        opacity: 0.25;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
 }
 
 #post-end {

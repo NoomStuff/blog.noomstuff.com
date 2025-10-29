@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a7bbea504e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
+    <script src="../../js/progress-bar.js" defer></script>
+    <script src="../../js/code-blocks.js" defer></script>
+
+    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
+    <meta name="description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
+    <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
+
+    <meta property="og:title" content="How I Invented 3,668,328 New Ways To Case Your Code">
+    <meta property="og:description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
+    <meta property="og:image" content="https://blog.noomstuff.com/posts/chatgpt-bangs/thumbnail.png">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How I Invented 3,668,328 New Ways To Case Your Code">
+    <meta name="twitter:description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
+    <meta name="twitter:image" content="https://blog.noomstuff.com/posts/chatgpt-bangs/thumbnail.png">
+    <meta name="twitter:creator" content="@NoomStuff">
+
+    <title>Giving ChatGPT bangs | NoomStuff's Blog</title>
+</head>
+
+<body>
+    <main id="post">
+        <div id="banner">
+            <div>
+                <div>
+                    <h6>Blog</h6>
+                    <h1>How I gave ChatGPT new modes using bangs</h1>
+                </div>
+            </div>
+        </div>
+
+        <section class="post-content">
+            <div class="post-data">
+                <p>Written by NoomStuff</p>
+                <h6>October 28th 2025</h6>
+            </div>
+            <h2><i class="fa-solid fa-question"></i>How this happened</h2>
+            <div class="row">
+                <div>
+                    <p>I all started when I got a Discord ping from from a friend:</p>
+                    <p>Hmm...<br>Whats this?<br>"Absolute Mode"?</p>
+                    <p>This seemed really interesting to me, so I dropped everything and went over to ChatGPT.</p>
+                </div>
+                <figure><img src="redanils-message.png" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
+            </div>
+
+            <h3><i class="fa-solid fa-bolt"></i>Absolute Mode</h3>
+            <p>I started a new chat and pasted in the Sytem Instruction, and WOW!</p>
+            <p>No more fluff.<br>No more emoji spam.<br>No more glazing intro.<br>No more useless follow ups.</p>
+            <p>Just a straight answer...</p>
+
+            <h3><i class="fa-solid fas fa-exclamation"></i>Introducing: !bangs</h3>
+            <div class="row">
+                <figure class="rigid limit" style="flex: 0.5;"><img src="bangs-example.png" alt="A DuckDuckGo searchbox with several examples of bangs"></figure>
+                <div>
+                    <p>Bangs are a concept made popular by <a href="https://duckduckgo.com/bang" target="_blank">DuckDuckGo</a>, where you can use special commands (called bangs) to quickly search specific websites.<br>An example:</p>
+                    <pre data-header="Search"><code><span class="input">!yt</span> NoomStuff</code></pre>
+                    <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser, like <span class="code-snippet">!w</span> for WikiPedia, <span class="code-snippet">!g</span> for Google or <span class="code-snippet">!gh</span> for GitHub</p>
+                </div>
+            </div>
+            <p>Since recently switched to <a href="https://helium.computer" target="_blank">Helium Browser</a>, and I've been having a blast using bangs. </p>
+            <p>This combined with the "Absolute Mode" prompt I just messed around with, got me thinking...<br>What if I apply a similar idea to ChatGPT conversations?</p>
+
+            <h3><i class="fa-solid fa-gears"></i>Making Modes with Custom Instructions</h3>
+            <p>Wouldn't it be cool to control the way ChatGPT responds using bangs?</p>
+            <p>So I spent a good 1-2 hours creating a new Personalisiation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
+            <figure class="rigid limit""><img src="character-limit.png" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
+<p>Oh... Character limit.</p>
+<p>After (ironically) asking ChatGPT to shorten the instructions to less than 1500 characters, and modifying the result a bit. I was left with this System Prompt:</p>
+
+            <pre data-header="New System Prompt (shortened).md" class="collapsible"><code class="language-markdown"># System Prompt
+## Base
+If no bangs are used: forget any prior tone, emoji, formatting, or style instructions. Respond as a default GPT model would
+
+## Bangs
+Bangs modify response tone (eg: "!a &lt;message&gt;"). They override base behavior & persist until changed or reset. Bangs can stack; follow all given, prioritizing order. Combine logically (eg: "!c !t" = educational code). Default back to Base when none active
+
+### Absolute Mode (!a, !abs, !absolute)
+Eliminate emojis, filler, soft asks, transitions
+Assume user is perceptive
+Be blunt, direct, focus on info, not tone
+No engagement phrasing, emotional softening, mirroring, or questions
+End reply immediately after info
+Goal: independence & brevity
+
+### Code Mode (!c, !code)
+Keep existing functionality, formatting & comments unless changes requested
+Prefer Allman brackets
+Avoid temp one-use vars, abbreviated var names & new lines based on length
+Comments must be permanently useful & match existing style, else don't add
+Ask clarification for ambiguous code or context
+Follow code rules strictly
+Return full updated script or function
+Goal: functional, clear code
+
+### Fun Mode (!f, !fun)
+Prioritize conversation, humor, & tone-matching
+Goal: engaging interaction & user satisfaction
+
+### Teach Mode (!t, !teach)
+Avoid verbosity, redundancy, or condescension
+Assume user wants understanding, not shortcuts
+Be clear, structured, & transparent in reasoning
+Goal: user learns something new</code></pre>
+
+            <h3><i class="fa-solid fa-gears"></i>Use cases</h3>
+            <p>So... is this even useful?</p>
+        </section>
+        <section>
+            <article id="post-end">
+                <div>
+                    <h3>Thanks for reading!</h3>
+                    <h6>Consider checking these out.</h6>
+                </div>
+                <div class="button-group">
+                    <a href="https://www.noomstuff.com" class="button"><i class="fa-solid fa-globe"></i> NoomStuff.com</a>
+                    <a href="../../" class="button"><i class="fa-solid fa-arrow-left"></i> All Posts</a>
+                    <a href="https://www.noomstuff.com/linktree" class="button"><i class="fa-solid fa-heart"></i> My Socials</a>
+                </div>
+                <a href="https://github.com/NoomStuff/chatgpt-bangs" class="button"><i class="fa-brands fa-github"></i>Checkout GitHub Repo</a>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
