@@ -323,7 +323,7 @@ ol li::marker {
 
 
 /* ===== Code Blocks ===== */
-.code-snippet {
+.codeblock {
     background: var(--background-color-light) !important;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     padding: 0.2rem 0.4rem;
@@ -332,9 +332,9 @@ ol li::marker {
 
 pre {
     background: var(--background-color-light) !important;
+    width: 100%;
     padding: 1rem;
     border-radius: var(--spacing-1);
-    overflow-x: scroll;
     margin: var(--spacing-2) 0 !important;
 }
 
@@ -347,6 +347,7 @@ code {
     color: #ccc;
     background: none;
     white-space: pre;
+    overflow-x: scroll;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
@@ -362,6 +363,10 @@ code {
 
 code .input {
     color: #8ef;
+}
+
+pre.wrap code {
+    white-space: pre-wrap !important;
 }
 
 pre.collapsible {

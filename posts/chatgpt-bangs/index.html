@@ -66,7 +66,7 @@
                 <div>
                     <p>Bangs are a concept made popular by <a href="https://duckduckgo.com/bang" target="_blank">DuckDuckGo</a>, where you can use special commands (called bangs) to quickly search specific websites.<br>An example:</p>
                     <pre data-header="Search"><code><span class="input">!yt</span> NoomStuff</code></pre>
-                    <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser, like <span class="code-snippet">!w</span> for WikiPedia, <span class="code-snippet">!g</span> for Google or <span class="code-snippet">!gh</span> for GitHub</p>
+                    <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser, like <span class="codeblock">!w</span> for WikiPedia, <span class="codeblock">!g</span> for Google or <span class="codeblock">!gh</span> for GitHub</p>
                 </div>
             </div>
             <p>Since recently switched to <a href="https://helium.computer" target="_blank">Helium Browser</a>, and I've been having a blast using bangs. </p>
@@ -75,13 +75,13 @@
             <h3><i class="fa-solid fa-gears"></i>Making Modes with Custom Instructions</h3>
             <p>Wouldn't it be cool to control the way ChatGPT responds using bangs?</p>
             <p>So I spent a good 1-2 hours creating a new Personalisiation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
-            <figure class="rigid limit""><img src="character-limit.png" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
-<p>Oh... Character limit.</p>
-<p>After (ironically) asking ChatGPT to shorten the instructions to less than 1500 characters, and modifying the result a bit. I was left with this System Prompt:</p>
+            <figure class="rigid limit""><img src=" character-limit.png" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
+            <p>Oh... Character limit.</p>
+            <p>After (ironically) asking ChatGPT to shorten the instructions to less than 1500 characters, and modifying the result a bit. I was left with this System Prompt:</p>
 
-            <pre data-header="New System Prompt (shortened).md" class="collapsible"><code class="language-markdown"># System Prompt
+            <pre data-header="New System Prompt (shortened).md" class="collapsible wrap"><code class="language-markdown"># System Prompt
 ## Base
-If no bangs are used: forget any prior tone, emoji, formatting, or style instructions. Respond as a default GPT model would
+If no bangs are in use: ignore all bang instructions. Respond as a default GPT model would following base preferences
 
 ## Bangs
 Bangs modify response tone (eg: "!a &lt;message&gt;"). They override base behavior & persist until changed or reset. Bangs can stack; follow all given, prioritizing order. Combine logically (eg: "!c !t" = educational code). Default back to Base when none active
@@ -113,6 +113,49 @@ Avoid verbosity, redundancy, or condescension
 Assume user wants understanding, not shortcuts
 Be clear, structured, & transparent in reasoning
 Goal: user learns something new</code></pre>
+
+            <h3><i class="fa-solid fa-star"></i>Meet the team</h3>
+            <div class="row">
+                <div>
+                    <p><b>Absolute Mode</b> (<span class="codeblock">!a</span> <span class="codeblock">!abs</span> <span class="codeblock">!absolute</span>)</p>
+                    <p>Based on the "Absolute Mode" prompt from earlier. Meant to be purely informative. No nonsence</p>
+                    <ul>
+                        <li>Blunt & direct</li>
+                        <li>Gets rid of filler, fluff, follow-ups, emoji spam, etc</li>
+                        <li>Focussed on independent thinking</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><b>Code Mode</b> (<span class="codeblock">!c</span> <span class="codeblock">!code</span>)</p>
+                    <p>For when you need code written or modified. Closely follows (my) code standards.</p>
+                    <ul>
+                        <li>Strict formatting & comment rules</li>
+                        <li>Returns full changed script or function</li>
+                        <li>Aims to make good code</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div>
+                    <p><b>Fun Mode</b> (<span class="codeblock">!f</span> <span class="codeblock">!fun</span>)</p>
+                    <p>This one is for casual conversations. Figured I'd add something social too to balance out other modes.</p>
+                    <ul>
+                        <li>Humorous & engaging</li>
+                        <li>Matches your tone</li>
+                        <li>For discussing fun topics</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><b>Teach Mode</b> (<span class="codeblock">!t</span> <span class="codeblock">!teach</span>)</p>
+                    <p>Sometimes you want to learn something step by step but only get instant anwers. This prevents that.</p>
+                    <ul>
+                        <li>Prioritizes you learning</li>
+                        <li>Gives clear & structured explanations</li>
+                        <li>Avoids shortcuts & instant answers</li>
+                    </ul>
+                </div>
+            </div>
 
             <h3><i class="fa-solid fa-gears"></i>Use cases</h3>
             <p>So... is this even useful?</p>
