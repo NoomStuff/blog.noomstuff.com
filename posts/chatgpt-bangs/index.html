@@ -15,14 +15,14 @@
     <meta name="description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
     <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
 
-    <meta property="og:title" content="How I Invented 3,668,328 New Ways To Case Your Code">
-    <meta property="og:description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
+    <meta property="og:title" content="How I gave ChatGPT new modes using bangs">
+    <meta property="og:description" content="">
     <meta property="og:image" content="https://blog.noomstuff.com/posts/chatgpt-bangs/thumbnail.png">
     <meta property="og:type" content="article">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How I Invented 3,668,328 New Ways To Case Your Code">
-    <meta name="twitter:description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
+    <meta name="twitter:title" content="How I gave ChatGPT new modes using bangs">
+    <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://blog.noomstuff.com/posts/chatgpt-bangs/thumbnail.png">
     <meta name="twitter:creator" content="@NoomStuff">
 
@@ -50,38 +50,41 @@
                 <div>
                     <p>I all started when I got a Discord ping from from a friend:</p>
                     <p>Hmm...<br>Whats this?<br>"Absolute Mode"?</p>
-                    <p>This seemed really interesting to me, so I dropped everything and went over to ChatGPT.</p>
+                    <p>This seemed pretty interesting to me, so I dropped everything and headed over to ChatGPT.</p>
                 </div>
                 <figure><img src="redanils-message.png" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
             </div>
 
             <h3><i class="fa-solid fa-bolt"></i>Absolute Mode</h3>
             <p>I started a new chat and pasted in the Sytem Instruction, and WOW!</p>
+            <figure>
+                <video src="absolute-mode.mp4" autoplay muted loop></video>
+            </figure>
             <p>No more fluff.<br>No more emoji spam.<br>No more glazing intro.<br>No more useless follow ups.</p>
-            <p>Just a straight answer...</p>
+            <p>Just a straight answer... very cool!</p>
 
-            <h3><i class="fa-solid fas fa-exclamation"></i>Introducing: !bangs</h3>
+            <h2><i class="fa-solid fas fa-exclamation"></i>Introducing: !bangs</h2>
             <div class="row">
                 <figure class="rigid limit" style="flex: 0.5;"><img src="bangs-example.png" alt="A DuckDuckGo searchbox with several examples of bangs"></figure>
                 <div>
                     <p>Bangs are a concept made popular by <a href="https://duckduckgo.com/bang" target="_blank">DuckDuckGo</a>, where you can use special commands (called bangs) to quickly search specific websites.<br>An example:</p>
                     <pre data-header="Search"><code><span class="input">!yt</span> NoomStuff</code></pre>
-                    <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser, like <span class="codeblock">!w</span> for WikiPedia, <span class="codeblock">!g</span> for Google or <span class="codeblock">!gh</span> for GitHub</p>
+                    <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser or search engine; like <span class="codeblock">!w</span> for Wikipedia, <span class="codeblock">!g</span> for Google or <span class="codeblock">!gh</span> for GitHub.</p>
                 </div>
             </div>
             <p>Since recently switched to <a href="https://helium.computer" target="_blank">Helium Browser</a>, and I've been having a blast using bangs. </p>
             <p>This combined with the "Absolute Mode" prompt I just messed around with, got me thinking...<br>What if I apply a similar idea to ChatGPT conversations?</p>
 
-            <h3><i class="fa-solid fa-gears"></i>Making Modes with Custom Instructions</h3>
-            <p>Wouldn't it be cool to control the way ChatGPT responds using bangs?</p>
-            <p>So I spent a good 1-2 hours creating a new Personalisiation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
+            <h3><i class="fa-solid fa-gears"></i>Making new Modes using Custom Instructions</h3>
+            <p>Wouldn't it be cool if you could control the way ChatGPT responds using bangs? I thought so!<br>So I spent a good 1-2 hours creating a new Personalisiation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
+            <p>Now to just paste in into the Custom Instructions aaaand:</p>
             <figure class="rigid limit""><img src=" character-limit.png" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
             <p>Oh... Character limit.</p>
             <p>After (ironically) asking ChatGPT to shorten the instructions to less than 1500 characters, and modifying the result a bit. I was left with this System Prompt:</p>
 
             <pre data-header="New System Prompt (shortened).md" class="collapsible wrap"><code class="language-markdown"># System Prompt
 ## Base
-If no bangs are in use: ignore all bang instructions. Respond as a default GPT model would following base preferences
+If no bangs are in use: ignore all bang instructions. Respond as you normally would, following base preferences
 
 ## Bangs
 Bangs modify response tone (eg: "!a &lt;message&gt;"). They override base behavior & persist until changed or reset. Bangs can stack; follow all given, prioritizing order. Combine logically (eg: "!c !t" = educational code). Default back to Base when none active
@@ -98,7 +101,7 @@ Goal: independence & brevity
 Keep existing functionality, formatting & comments unless changes requested
 Prefer Allman brackets
 Avoid temp one-use vars, abbreviated var names & new lines based on length
-Comments must be permanently useful & match existing style, else don't add
+Avoid adding comments unless; needed to understand, permanently useful & match existing style
 Ask clarification for ambiguous code or context
 Follow code rules strictly
 Return full updated script or function
@@ -114,11 +117,10 @@ Assume user wants understanding, not shortcuts
 Be clear, structured, & transparent in reasoning
 Goal: user learns something new</code></pre>
 
-
             <h3><i class="fa-solid fa-star"></i>Meet the team</h3>
             <div class="row">
                 <div>
-                    <p><b>Absolute Mode</b> (<span class="codeblock">!a</span> <span class="codeblock">!abs</span> <span class="codeblock">!absolute</span>)</p>
+                    <p><b>Absolute Mode</b> (<span class="codeblock">!a</span>, <span class="codeblock">!abs</span>, <span class="codeblock">!absolute</span>)</p>
                     <p>Based on the "Absolute Mode" prompt from earlier. Meant to be purely informative. No nonsence</p>
                     <ul>
                         <li>Blunt & direct</li>
@@ -127,7 +129,7 @@ Goal: user learns something new</code></pre>
                     </ul>
                 </div>
                 <div>
-                    <p><b>Code Mode</b> (<span class="codeblock">!c</span> <span class="codeblock">!code</span>)</p>
+                    <p><b>Code Mode</b> (<span class="codeblock">!c</span>, <span class="codeblock">!code</span>)</p>
                     <p>For when you need code written or modified. Closely follows (my) code standards.</p>
                     <ul>
                         <li>Strict formatting & comment rules</li>
@@ -139,7 +141,7 @@ Goal: user learns something new</code></pre>
             <br>
             <div class="row">
                 <div>
-                    <p><b>Fun Mode</b> (<span class="codeblock">!f</span> <span class="codeblock">!fun</span>)</p>
+                    <p><b>Fun Mode</b> (<span class="codeblock">!f</span>, <span class="codeblock">!fun</span>)</p>
                     <p>This one is for casual conversations. Figured I'd add something social too to balance out other modes.</p>
                     <ul>
                         <li>Humorous & engaging</li>
@@ -148,7 +150,7 @@ Goal: user learns something new</code></pre>
                     </ul>
                 </div>
                 <div>
-                    <p><b>Teach Mode</b> (<span class="codeblock">!t</span> <span class="codeblock">!teach</span>)</p>
+                    <p><b>Teach Mode</b> (<span class="codeblock">!t</span>, <span class="codeblock">!teach</span>)</p>
                     <p>Sometimes you want to learn something step by step but only get instant anwers. This prevents that.</p>
                     <ul>
                         <li>Prioritizes you learning</li>
@@ -158,12 +160,12 @@ Goal: user learns something new</code></pre>
                 </div>
             </div>
 
-            <h3><i class="fa-solid fa-gears"></i>Cool... but isn't this kinda useless?</h3>
+            <h3><i class="fa-solid fa-poo"></i>Cool... but isn't this kinda useless?</h3>
             <p>So is this even practical? Well after using it for a bit myself, I can say it is actually pretty useful at times.<br>But, while I think this idea has good potential, it needs some work.</p>
-            <p>For starters, it doesn't seem that smart to bombard ChatGPT with instructions it doesn't always need using personalisation. Other apps like Claude already have personality switching and creation built into their chat UI, so you can easily switch them.</p>
-            <p>Ideally this can turn into a feature of the frontend instead of always including it in the system prompt, bangs could be used to dynamically append the personality you want.<br>Or even as an alternative way to trigger already existing actions like: <span class="codeblock">!search</span>, <span class="codeblock">!reason</span> or <span class="codeblock">!image</span>!</p>
+            <p>For starters, it doesn't seem that smart to bombard ChatGPT with instructions it doesn't always need using personalisation, this can cause context bloat. Other apps like Claude already have personality switching and creation built into their chat UI, so you can easily switch them.</p>
+            <p>Ideally this can turn into a feature of the frontend. Instead of always including it in the system prompt, bangs could be used to dynamically append the personality you want.<br>Or even as an alternative way to trigger already existing actions like: <span class="codeblock">!search</span>, <span class="codeblock">!reason</span> or <span class="codeblock">!image</span>.</p>
             <br>
-            <p>In the end, it was just a silly experiment I did on the side, but I thought it was an interesting concept and it might even be useful to you. And hey, if you happen to coincidentally be making an AI chat app, maybe this is something fun to experiment with?</p>
+            <p>In the end, this was just a silly experiment I did on the side, but I thought it was an interesting concept and it might even be useful to you. And hey, if you coincidentally happen to be making an AI chat app, maybe this is something fun to experiment with?</p>
         </section>
         <section>
             <article id="post-end">
