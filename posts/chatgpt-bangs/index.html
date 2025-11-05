@@ -11,9 +11,10 @@
     <script src="../../js/progress-bar.js" defer></script>
     <script src="../../js/code-blocks.js" defer></script>
 
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <meta name="description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
+    <title>Giving ChatGPT bangs - NoomStuff's Blog</title>
+    <meta name="description" content="How I created new ChatGPT modes using bangs and Custom Instructions.">
     <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
+    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
 
     <meta property="og:title" content="How I gave ChatGPT new modes using bangs">
     <meta property="og:description" content="">
@@ -26,7 +27,6 @@
     <meta name="twitter:image" content="https://blog.noomstuff.com/posts/chatgpt-bangs/thumbnail.png">
     <meta name="twitter:creator" content="@NoomStuff">
 
-    <title>Giving ChatGPT bangs | NoomStuff's Blog</title>
 </head>
 
 <body>
@@ -97,6 +97,10 @@ No engagement phrasing, emotional softening, mirroring, or questions
 End reply immediately after info
 Goal: independence & brevity
 
+### Fun Mode (!f, !fun)
+Prioritize conversation, humor, & tone-matching
+Goal: engaging interaction & user satisfaction
+
 ### Code Mode (!c, !code)
 Keep existing functionality, formatting & comments unless changes requested
 Prefer Allman brackets
@@ -106,10 +110,6 @@ Ask clarification for ambiguous code or context
 Follow code rules strictly
 Return full updated script or function
 Goal: functional, clear code
-
-### Fun Mode (!f, !fun)
-Prioritize conversation, humor, & tone-matching
-Goal: engaging interaction & user satisfaction
 
 ### Teach Mode (!t, !teach)
 Avoid verbosity, redundancy, or condescension
@@ -127,19 +127,10 @@ Goal: user learns something new</code></pre>
                         <li>Gets rid of filler, fluff, follow-ups, emoji spam, etc</li>
                         <li>Focussed on independent thinking</li>
                     </ul>
+                    <figure>
+                        <img src="modes-absolute.png" alt="A prompt to ChatGPT using the !a bang">
+                    </figure>
                 </div>
-                <div>
-                    <p><b>Code Mode</b> (<span class="codeblock">!c</span>, <span class="codeblock">!code</span>)</p>
-                    <p>For when you need code written or modified. Closely follows (my) code standards.</p>
-                    <ul>
-                        <li>Strict formatting & comment rules</li>
-                        <li>Returns full changed script or function</li>
-                        <li>Aims to make good code</li>
-                    </ul>
-                </div>
-            </div>
-            <br>
-            <div class="row">
                 <div>
                     <p><b>Fun Mode</b> (<span class="codeblock">!f</span>, <span class="codeblock">!fun</span>)</p>
                     <p>This one is for casual conversations. Figured I'd add something social too to balance out other modes.</p>
@@ -148,6 +139,25 @@ Goal: user learns something new</code></pre>
                         <li>Matches your tone</li>
                         <li>For discussing fun topics</li>
                     </ul>
+                    <figure>
+                        <img src="modes-fun.png" alt="A prompt to ChatGPT using the !a bang">
+                    </figure>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div>
+                    <p><b>Code Mode</b> (<span class="codeblock">!c</span>, <span class="codeblock">!code</span>)</p>
+                    <p>For when you need code written or modified. Closely follows (my) code standards.</p>
+                    <ul>
+                        <li>Strict formatting & comment rules</li>
+                        <li>Returns full changed script or function</li>
+                        <li>Aims to make good code</li>
+                    </ul>
+                    <figure>
+                        <img src="modes-code.png" alt="A prompt to ChatGPT using the !a bang">
+                    </figure>
                 </div>
                 <div>
                     <p><b>Teach Mode</b> (<span class="codeblock">!t</span>, <span class="codeblock">!teach</span>)</p>
@@ -157,6 +167,9 @@ Goal: user learns something new</code></pre>
                         <li>Gives clear & structured explanations</li>
                         <li>Avoids shortcuts & instant answers</li>
                     </ul>
+                    <figure>
+                        <img src="modes-teach.png" alt="A prompt to ChatGPT using the !a bang">
+                    </figure>
                 </div>
             </div>
 
@@ -178,7 +191,6 @@ Goal: user learns something new</code></pre>
                     <a href="../../" class="button"><i class="fa-solid fa-arrow-left"></i> All Posts</a>
                     <a href="https://www.noomstuff.com/linktree" class="button"><i class="fa-solid fa-heart"></i> My Socials</a>
                 </div>
-                <a href="https://github.com/NoomStuff/chatgpt-bangs" class="button"><i class="fa-brands fa-github"></i>Checkout GitHub Repo</a>
             </article>
         </section>
     </main>

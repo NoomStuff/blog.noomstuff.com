@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to Latest Post...</title>
+    <meta name="robots" content="noindex">
+
+    <meta property="og:title" content="Lastest Post - NoomStuff's Blog">
+    <meta property="og:description" content="What could it be? Read the latest post on my Blog.">
+    <meta property="og:image" content="https://blog.noomstuff.com/latest/social-preview.png">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lastest Post - NoomStuff's Blog">
+    <meta name="twitter:description" content="What could it be? Read the latest post on my Blog.">
+    <meta name="twitter:image" content="https://blog.noomstuff.com/latest/social-preview.png">
+    <meta name="twitter:creator" content="@NoomStuff">
+
+    <script>
+        fetch('/latest.json')
+            .then(res => res.json())
+            .then(post => location.href = post.url)
+            .catch(() => location.href = '/');
+    </script>
+</head>
+
+<body style="background-color: black; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <p>Redirecting to the latest post...</p>
+</body>
+
+</html>
