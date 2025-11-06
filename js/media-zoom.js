@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () =>
             z-index: 9999;
             opacity: 0;
             pointer-events: none;
+            cursor: zoom-out !important;
             transition: opacity 0.25s cubic-bezier(0.25, 1, 0.75, 1);
         }
 
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () =>
             max-height: 90vh;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
             border-radius: 10px;
-            cursor: zoom-out;
+            cursor: zoom-out !important;
             transition: transform 0.25s cubic-bezier(0.25, 1, 0.75, 1);
         }
 
@@ -71,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () =>
                 clone.getBoundingClientRect();
 
                 overlay.classList.add("active");
-                element.style.cursor = "zoom-out";
             }
             else if (activeElement === element) {
                 closeOverlay();
