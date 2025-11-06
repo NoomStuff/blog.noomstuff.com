@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/utilities.css">
     <script src="../../js/progress-bar.js" defer></script>
+    <script src="../../js/media-zoom.js" defer></script>
     <script src="../../js/code-blocks.js" defer></script>
 
     <title>Giving ChatGPT bangs - NoomStuff's Blog</title>
@@ -43,42 +44,42 @@
         <section class="post-content">
             <div class="post-data">
                 <p>Written by NoomStuff</p>
-                <h6>October 28th 2025</h6>
+                <h6>November 7th 2025</h6>
             </div>
             <h2><i class="fa-solid fa-question"></i>How this happened</h2>
             <div class="row">
                 <div>
-                    <p>I all started when I got a Discord ping from from a friend:</p>
+                    <p>It all started when I got a Discord ping from from a friend:</p>
                     <p>Hmm...<br>Whats this?<br>"Absolute Mode"?</p>
                     <p>This seemed pretty interesting to me, so I dropped everything and headed over to ChatGPT.</p>
                 </div>
-                <figure><img src="redanils-message.png" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
+                <figure><img src="redanils-message.png" class="zoomable" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
             </div>
 
             <h3><i class="fa-solid fa-bolt"></i>Absolute Mode</h3>
-            <p>I started a new chat and pasted in the Sytem Instruction, and WOW!</p>
+            <p>I started a new chat and pasted in the System Instruction, and WOW!</p>
             <figure>
-                <video src="absolute-mode.mp4" autoplay muted loop></video>
+                <video src="absolute-mode.mp4" class="zoomable" autoplay muted loop></video>
             </figure>
             <p>No more fluff.<br>No more emoji spam.<br>No more glazing intro.<br>No more useless follow ups.</p>
             <p>Just a straight answer... very cool!</p>
 
             <h2><i class="fa-solid fas fa-exclamation"></i>Introducing: !bangs</h2>
             <div class="row">
-                <figure class="rigid limit" style="flex: 0.5;"><img src="bangs-example.png" alt="A DuckDuckGo searchbox with several examples of bangs"></figure>
+                <figure class="rigid limit" style="flex: 0.5;"><img src="bangs-example.png" class="zoomable" alt="A DuckDuckGo searchbox with several examples of bangs"></figure>
                 <div>
                     <p>Bangs are a concept made popular by <a href="https://duckduckgo.com/bang" target="_blank">DuckDuckGo</a>, where you can use special commands (called bangs) to quickly search specific websites.<br>An example:</p>
                     <pre data-header="Search"><code><span class="input">!yt</span> NoomStuff</code></pre>
                     <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser or search engine; like <span class="codeblock">!w</span> for Wikipedia, <span class="codeblock">!g</span> for Google or <span class="codeblock">!gh</span> for GitHub.</p>
                 </div>
             </div>
-            <p>Since recently switched to <a href="https://helium.computer" target="_blank">Helium Browser</a>, and I've been having a blast using bangs. </p>
+            <p>Since I recently switched to <a href="https://helium.computer" target="_blank">Helium Browser</a>, and I've been having a blast using bangs. </p>
             <p>This combined with the "Absolute Mode" prompt I just messed around with, got me thinking...<br>What if I apply a similar idea to ChatGPT conversations?</p>
 
             <h3><i class="fa-solid fa-gears"></i>Making new Modes using Custom Instructions</h3>
-            <p>Wouldn't it be cool if you could control the way ChatGPT responds using bangs? I thought so!<br>So I spent a good 1-2 hours creating a new Personalisiation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
-            <p>Now to just paste in into the Custom Instructions aaaand:</p>
-            <figure class="rigid limit""><img src=" character-limit.png" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
+            <p>Wouldn't it be cool if you could control the way ChatGPT responds using bangs? I thought so!<br>So I spent a good 1-2 hours creating a new Personalisation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
+            <p>Now to just paste it into the Custom Instructions aaaand:</p>
+            <figure class="rigid limit"><img src="character-limit.png" class="zoomable" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
             <p>Oh... Character limit.</p>
             <p>After (ironically) asking ChatGPT to shorten the instructions to less than 1500 characters, and modifying the result a bit. I was left with this System Prompt:</p>
 
@@ -121,14 +122,14 @@ Goal: user learns something new</code></pre>
             <div class="row">
                 <div>
                     <p><b>Absolute Mode</b> (<span class="codeblock">!a</span>, <span class="codeblock">!abs</span>, <span class="codeblock">!absolute</span>)</p>
-                    <p>Based on the "Absolute Mode" prompt from earlier. Meant to be purely informative. No nonsence</p>
+                    <p>Based on the "Absolute Mode" prompt from earlier. Meant to be purely informative. No nonsense</p>
                     <ul>
                         <li>Blunt & direct</li>
                         <li>Gets rid of filler, fluff, follow-ups, emoji spam, etc</li>
-                        <li>Focussed on independent thinking</li>
+                        <li>Focused on independent thinking</li>
                     </ul>
                     <figure>
-                        <img src="modes-absolute.png" alt="A prompt to ChatGPT using the !a bang">
+                        <img src="modes-absolute.png" class="zoomable" alt="A prompt to ChatGPT using the !a bang">
                     </figure>
                 </div>
                 <div>
@@ -140,7 +141,7 @@ Goal: user learns something new</code></pre>
                         <li>For discussing fun topics</li>
                     </ul>
                     <figure>
-                        <img src="modes-fun.png" alt="A prompt to ChatGPT using the !a bang">
+                        <img src="modes-fun.png" class="zoomable" alt="A prompt to ChatGPT using the !a bang">
                     </figure>
                 </div>
 
@@ -156,19 +157,19 @@ Goal: user learns something new</code></pre>
                         <li>Aims to make good code</li>
                     </ul>
                     <figure>
-                        <img src="modes-code.png" alt="A prompt to ChatGPT using the !a bang">
+                        <img src="modes-code.png" class="zoomable" alt="A prompt to ChatGPT using the !a bang">
                     </figure>
                 </div>
                 <div>
                     <p><b>Teach Mode</b> (<span class="codeblock">!t</span>, <span class="codeblock">!teach</span>)</p>
-                    <p>Sometimes you want to learn something step by step but only get instant anwers. This prevents that.</p>
+                    <p>Sometimes you want to learn something step by step but only get instant answers. This prevents that.</p>
                     <ul>
                         <li>Prioritizes you learning</li>
                         <li>Gives clear & structured explanations</li>
                         <li>Avoids shortcuts & instant answers</li>
                     </ul>
                     <figure>
-                        <img src="modes-teach.png" alt="A prompt to ChatGPT using the !a bang">
+                        <img src="modes-teach.png" class="zoomable" alt="A prompt to ChatGPT using the !a bang">
                     </figure>
                 </div>
             </div>
