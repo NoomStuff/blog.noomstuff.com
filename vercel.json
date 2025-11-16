@@ -1,6 +1,11 @@
 {
     "redirects": [
         {
+            "source": "/posts",
+            "destination": "/",
+            "permanent": true
+        },
+        {
             "source": "/home",
             "destination": "https://www.noomstuff.com",
             "permanent": true

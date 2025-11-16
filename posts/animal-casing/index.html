@@ -7,13 +7,13 @@
     <script src="https://kit.fontawesome.com/a7bbea504e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/components.css">
-    <link rel="stylesheet" href="../../css/utilities.css">
     <script src="../../js/progress-bar.js" defer></script>
     <script src="../../js/code-blocks.js" defer></script>
 
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
+    <title>Animal Casing - NoomStuff's Blog</title>
     <meta name="description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
     <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
+    <link rel="icon" href="../../media/favicon.ico" type="image/x-icon">
 
     <meta property="og:title" content="How I Invented 3,668,328 New Ways To Case Your Code">
     <meta property="og:description" content="How a joke turned into a hilariously overengineered Python script that can generate over 3.6 million new casing methods.">
@@ -26,7 +26,6 @@
     <meta name="twitter:image" content="https://blog.noomstuff.com/posts/animal-casing/thumbnail.png">
     <meta name="twitter:creator" content="@NoomStuff">
 
-    <title>Animal Casing | NoomStuff's Blog</title>
 </head>
 
 <body>
@@ -62,7 +61,8 @@
             <figure><img src="chatgpt.png" alt="A prompt to ChatGPT reading: 'generate me a Python script that takes an input and randomises casing, then it returns that as [RandomAnimalNameFromAList]casing: [message]'"></figure>
             <p>The script ChatGPT provided needed only a few tweaks to satisfy my goblin brain (for now). And in only a couple of minutes, I ended up with this Python file:</p>
 
-            <pre class="collapsible" data-header="ANIMaL-caSING.py"><code class="language-Python">import random
+            <div class="code-block collapsible wrappable copyable">
+                <pre class="collapsible" data-header="ANIMaL-caSING.py"><code class="language-Python">import random
 
 def randomise_casing(text: str) -> str:
     return ''.join(
@@ -110,13 +110,16 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
+            </div>
             <p>Perfect, we can put in any text and the script will jumble it up by randomly changing letters to upper- or lowercase, picking a character to replace spaces with. I asked ChatGPT to generate me a list of 200+ animals, the script will pick a random one to use for the new casing name.</p>
-            <pre data-header="Command Prompt"><code>Enter your message: <span class="input">Hello World</span>
+            <div class="code-block wrapped">
+                <pre data-header="Command Prompt"><code>Enter your message: <span class="input">Hello World</span>
 
 cRoW_CasIng:
 HELlo_woRlD
 
 Press Enter to exit...</code></pre>
+            </div>
             <p>And that was that, only took about 5 minutes too! So I typed in "Animal Casing", named the script whatever it spat out and moved on with my day.</p>
 
             <h2><i class="fa-solid fa-seedling"></i>What if better tho?</h2>
@@ -124,7 +127,8 @@ Press Enter to exit...</code></pre>
             <p>What if we don't just change the letters to uppercase or lowercase randomly, but ran it through a random set of premade functions instead? Interesting idea, I thought. So I started work on my next 10 minute side-project...</p>
             <p>A mere 3 hours later I finally finished the most hilariously overengineered script I have ever made:</p>
 
-            <pre class="collapsible" data-header="ANIMaL—cAsING—genERAToR—V3.py"><code class="language-Python">import random
+            <div class="code-block collapsible wrappable copyable">
+                <pre class="collapsible" data-header="ANIMaL—cAsING—genERAToR—V3.py"><code class="language-Python">import random
 import re
 
 # Make sure there are spaces
@@ -347,6 +351,7 @@ def main():
 
 if __name__ == "__main__":
     main()</code></pre>
+            </div>
             <p>What changed?<br><em>Well I'm glad no one asked!</em></p>
             <ul>
                 <p>The script now:</p>
@@ -362,7 +367,8 @@ if __name__ == "__main__":
             <h3><i class="fa-solid fa-wand-magic-sparkles"></i>Final result</h3>
             <p>Here's an example of this monolithic waste of time in action:</p>
 
-            <pre data-header="Command Prompt"><code>Enter your message:
+            <div class="code-block wrapped">
+                <pre data-header="Command Prompt"><code>Enter your message:
 > <span class="input">Animal Casing Generator</span>
 
 taRSIER—CasInG_:
@@ -379,29 +385,36 @@ Final operation: Suffix underscore, Flip last
 Space operation: Emdash
 
 Press [Enter] to exit...</code></pre>
+            </div>
 
             <p>And some other fun results I got</p>
 
-            <pre data-header="Command Prompt"><code>> <span class="input">otherCasingTypesWorkToo</span>
+            <div class="code-block wrapped">
+                <pre data-header="Command Prompt"><code>> <span class="input">otherCasingTypesWorkToo</span>
 
 lyNx Casing:
 otHer CaSing TypEs WOrk TOo
 </code></pre>
-            <pre data-header="Command Prompt"><code>> <span class="input">decently long testing message because why not ya know?</span>
+            </div>
+            <div class="code-block wrapped">
+                <pre data-header="Command Prompt"><code>> <span class="input">decently long testing message because why not ya know?</span>
 
 Spinosaurus   cASING:
 Decently   lONG   Testing   mESSAGE   Because   wHY   Not   yA   Know?
 </code></pre>
-            <pre data-header="Command Prompt"><code>> <span class="input">FOLLOW NOOMSTUFF ON YT AND BSKY</span>
+                <div class="code-block wrapped">
+                    <pre data-header="Command Prompt"><code>> <span class="input">FOLLOW NOOMSTUFF ON YT AND BSKY</span>
 
 _DINgO_CAsInG:
 _FoLLoW_NoomstufF_on_yt_AnD_bsKY
 </code></pre>
+                </div>
 
-            <h3><i class="fa-solid fa-crosshairs"></i>Okay, that's cool and all Noom, but did you just clickbait me?</h3>
-            <p>Uhhm, maybe? I did promise you more than 3.6 million ways to case. Let's do some math...</p>
+                <h3><i class="fa-solid fa-crosshairs"></i>Okay, that's cool and all Noom, but did you just clickbait me?</h3>
+                <p>Uhhm, maybe? I did promise you more than 3.6 million ways to case. Let's do some math...</p>
 
-            <pre data-header="Calculations"><code># Base changes
+                <div class="code-block wrapped"></div>
+                <pre data-header="Calculations"><code># Base changes
 Base operations  : <span class="input">6</span>  (none, upper, lower, alternate(2), random)
 Final operations : <span class="input">17</span> (none, 1 op, 2 ordered ops from 4)
 Space operations : <span class="input">6</span>  (remove, space, tab, _, -, —)
@@ -420,6 +433,7 @@ Total word variations → <span class="input">5994</span>
 # Total variants
 6 (space) * 6 (base) * 5994 (words) * 17 (final) = <span class="input">3,668,328</span>
 </code></pre>
+            </div>
 
             <p>This number is not accounting for the different animals you get, or most variations that depend on your input. So in most cases the possible variations are actually way higher. (Up to 10,337,313,420 for "hello world"!!)<br>So yeah, get REVERSE CLICKBAITED.</p>
             <p>But what is the actual number? I don't know! Probably somewhere between 1 and infinity.</p>
@@ -435,7 +449,7 @@ Total word variations → <span class="input">5994</span>
                 <div class="button-group">
                     <a href="https://www.noomstuff.com" class="button"><i class="fa-solid fa-globe"></i> NoomStuff.com</a>
                     <a href="../../" class="button"><i class="fa-solid fa-arrow-left"></i> All Posts</a>
-                    <a href="https://www.noomstuff.com/linktree" class="button"><i class="fa-solid fa-heart"></i> My Socials</a>
+                    <a href="https://links.noomstuff.com" class="button"><i class="fa-solid fa-heart"></i> My Socials</a>
                 </div>
                 <a href="https://github.com/NoomStuff/animal-casing" class="button"><i class="fa-brands fa-github"></i>Checkout GitHub Repo</a>
             </article>
