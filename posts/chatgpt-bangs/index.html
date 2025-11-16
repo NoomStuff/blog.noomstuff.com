@@ -15,7 +15,7 @@
     <title>Giving ChatGPT bangs - NoomStuff's Blog</title>
     <meta name="description" content="Find out how I created new ChatGPT modes using bangs and custom Personalisation Settings.">
     <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
-    <link rel="icon" href="https://noomstuff.com/media/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../media/favicon.ico" type="image/x-icon">
 
     <meta property="og:title" content="How I gave ChatGPT new answer modes using bangs">
     <meta property="og:description" content="Find out how I created new ChatGPT modes using bangs and custom Personalisation Settings.">
@@ -44,13 +44,13 @@
         <section class="post-content">
             <div class="post-data">
                 <p>Written by NoomStuff</p>
-                <h6>November 15th 2025</h6>
+                <h6>November 16th 2025</h6>
             </div>
             <h2><i class="fa-solid fa-question"></i>How this happened</h2>
             <div class="row">
                 <div>
-                    <p>It all started when I got a Discord ping from from a friend:</p>
-                    <p>Hmm...<br>Whats this?<br>"Absolute Mode"?</p>
+                    <p>It all started when I got a Discord ping from a friend:</p>
+                    <p>Hmm...<br>What's this?<br>"Absolute Mode"?</p>
                     <p>This seemed pretty interesting to me, so I dropped what I was doing and headed over to <a href="https://chatgpt.com/" target="_blank">ChatGPT.com</a>.</p>
                 </div>
                 <figure><img src="redanils-message.png" class="zoomable" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
@@ -69,14 +69,16 @@
                 <figure class="rigid limit" style="flex: 0.5;"><img src="bangs-example.png" class="zoomable" alt="A DuckDuckGo searchbox with several examples of bangs"></figure>
                 <div>
                     <p>Bangs are a concept made popular by <a href="https://duckduckgo.com/bang" target="_blank">DuckDuckGo</a>, where you can use special commands (called bangs) to quickly search specific websites.<br>An example:</p>
-                    <pre data-header="Search"><code><span class="input">!yt</span> NoomStuff</code></pre>
-                    <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser or search engine; like <span class="code-snippet">!w</span> for Wikipedia, <span class="code-snippet">!g</span> for Google or <span class="code-snippet">!gh</span> for GitHub.</p>
+                    <div class="code-block wrapped copyable">
+                        <pre data-header="Search"><code><span class="input">!yt</span> NoomStuff</code></pre>
+                    </div>
+                    <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser or search engine, like <span class="code-snippet">!w</span> for Wikipedia, <span class="code-snippet">!g</span> for Google or <span class="code-snippet">!gh</span> for GitHub.</p>
                 </div>
             </div>
-            <p>Since I recently switched to <a href="https://helium.computer" target="_blank">Helium Browser</a> I've been having a blast using bangs.</p>
-            <p>This combined with the "Absolute Mode" prompt I just messed around with, got me thinking...<br>What if I apply a similar idea to ChatGPT conversations?</p>
+            <p>Since I recently switched to <a href="https://helium.computer" target="_blank">Helium Browser</a> I've been having a blast using bangs as they are built into the searchbar.</p>
+            <p>This combined with the "Absolute Mode" prompt I just messed around with got me thinking...<br>What if I try to add bangs to ChatGPT conversations?</p>
 
-            <h3><i class="fa-solid fa-gears"></i>Making new Modes using Custom Instructions</h3>
+            <h3><i class="fa-solid fa-gears"></i>Making new personalities with Custom Instructions</h3>
             <p>Wouldn't it be cool if you could control the way ChatGPT responds using bangs? I thought so!<br>So I spent a good 1-2 hours creating a new Personalisation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
             <p>Now to just paste it into the Custom Instructions aaaand:</p>
             <figure class="rigid limit"><img src="character-limit.png" class="zoomable" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
@@ -166,7 +168,7 @@ Goal: user learns something new</code></pre>
                     <p><b>Teach Mode</b> (<span class="code-snippet">!t</span>, <span class="code-snippet">!teach</span>)</p>
                     <p>Sometimes you want to learn something step by step but only get instant answers. This prevents that.</p>
                     <ul>
-                        <li>Prioritizes you learning</li>
+                        <li>Prioritizes learning</li>
                         <li>Gives clear & structured explanations</li>
                         <li>Avoids shortcuts & instant answers</li>
                     </ul>
@@ -177,11 +179,11 @@ Goal: user learns something new</code></pre>
             </div>
 
             <h3><i class="fa-solid fa-poo"></i>Cool... but isn't this kinda useless?</h3>
-            <p>So is this even practical? Well after using it for a bit myself, I can say it is actually pretty useful at times.<br>But, while I think this idea has good potential, it needs some work.</p>
+            <p>So is this even practical? Well, after using it for a bit myself, I can say it is actually pretty useful at times.<br>But, while I think this idea has good potential, it needs some work.</p>
             <p>For starters, it doesn't seem that smart to bombard ChatGPT with instructions it doesn't always need using personalisation, this can cause context bloat. Other apps like Claude already have personality switching and creation built into their chat UI, so you can easily switch them.</p>
-            <p>Ideally this can turn into a feature of the frontend. Instead of always including it in the system prompt, bangs could be used to dynamically append the personality you want.<br>Or even as an alternative way to trigger already existing actions like: <span class="code-snippet">!search</span>, <span class="code-snippet">!reason</span> or <span class="code-snippet">!image</span>.</p>
+            <p>Ideally the bangs would add the personality to the prompt dynamically, instead of always including them all in the system prompt. Or they could even work as an alternative way to trigger already existing actions like: <span class="code-snippet">!search</span>, <span class="code-snippet">!reason</span> or <span class="code-snippet">!image</span>.</p>
             <br>
-            <p>In the end, this was just a silly experiment I did on the side, but I thought it was an interesting concept and it might even be useful to you. And hey, if you coincidentally happen to be making an AI chat app, maybe this is something fun to experiment with?</p>
+            <p>In the end, this was just a silly experiment I did on the side. But I thought it was an interesting concept and it might even be useful to you. And hey, if you coincidentally happen to be making an AI chat app, maybe this is something fun to experiment with?</p>
         </section>
         <section>
             <article id="post-end">
@@ -192,7 +194,7 @@ Goal: user learns something new</code></pre>
                 <div class="button-group">
                     <a href="https://www.noomstuff.com" class="button"><i class="fa-solid fa-globe"></i> NoomStuff.com</a>
                     <a href="../../" class="button"><i class="fa-solid fa-arrow-left"></i> All Posts</a>
-                    <a href="https://www.noomstuff.com/linktree" class="button"><i class="fa-solid fa-heart"></i> My Socials</a>
+                    <a href="https://links.noomstuff.com" class="button"><i class="fa-solid fa-heart"></i> My Socials</a>
                 </div>
             </article>
         </section>

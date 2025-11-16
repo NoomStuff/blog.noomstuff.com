@@ -212,11 +212,12 @@ a {
     color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border 0.3s ease;
+    border-bottom: 2px solid var(--primary-color-dark);
+}
 
-    &:hover {
-        text-decoration: underline;
-    }
+a:hover {
+    border-bottom: 2px solid var(--primary-color);
 }
 
 b {
