@@ -1,4 +1,10 @@
 {
+    "rewrites": [
+        {
+            "source": "/404",
+            "destination": "https://noomstuff.com/404.html"
+        }
+    ],
     "redirects": [
         {
             "source": "/posts",
