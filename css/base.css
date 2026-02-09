@@ -28,6 +28,16 @@
     --border-divider: 2px solid var(--background-color-light)
 }
 
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: rgba(163, 109, 242, 0.75);
+    color: white;
+    text-shadow: 2px 2px 2px var(--background-color);
+}
+
 #progress-bar {
     position: fixed;
     top: 0;
