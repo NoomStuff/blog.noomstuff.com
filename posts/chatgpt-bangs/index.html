@@ -9,22 +9,23 @@
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/components.css">
     <script src="../../js/progress-bar.js" defer></script>
+    <script src="../../js/header-links.js" defer></script>
     <script src="../../js/media-zoom.js" defer></script>
     <script src="../../js/code-blocks.js" defer></script>
 
     <title>Giving ChatGPT bangs - NoomStuff's Blog</title>
-    <meta name="description" content="Find out how I created new ChatGPT modes using bangs and custom Personalisation Settings.">
+    <meta name="description" content="Find out how I created new ChatGPT modes Using !Bangs and custom Personalisation Settings.">
     <meta name="keywords" content="NoomStuff, blog, post, games, gamedev, art, artist, development, coding, gaming, indie games">
     <link rel="icon" href="../../media/favicon.ico" type="image/x-icon">
 
-    <meta property="og:title" content="How I gave ChatGPT new answer modes using bangs">
-    <meta property="og:description" content="Find out how I created new ChatGPT modes using bangs and custom Personalisation Settings.">
+    <meta property="og:title" content="Giving ChatGPT New Answer Modes Using !Bangs">
+    <meta property="og:description" content="Find out how I created new ChatGPT modes Using !Bangs and custom Personalisation Settings.">
     <meta property="og:image" content="https://blog.noomstuff.com/posts/chatgpt-bangs/thumbnail.png">
     <meta property="og:type" content="article">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How I gave ChatGPT new answer modes using bangs">
-    <meta name="twitter:description" content="Find out how I created new ChatGPT modes using bangs and custom Personalisation Settings.">
+    <meta name="twitter:title" content="Giving ChatGPT New Answer Modes Using !Bangs">
+    <meta name="twitter:description" content="Find out how I created new ChatGPT modes Using !Bangs and custom Personalisation Settings.">
     <meta name="twitter:image" content="https://blog.noomstuff.com/posts/chatgpt-bangs/thumbnail.png">
     <meta name="twitter:creator" content="@NoomStuff">
 
@@ -33,10 +34,14 @@
 <body>
     <main id="post">
         <div id="banner">
-            <div>
+            <a class="post-back" href="/" aria-label="Back to homepage">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </a>
+
+            <div id="post-title">
                 <div>
                     <h6>Blog</h6>
-                    <h1>How I gave ChatGPT new answer modes using bangs</h1>
+                    <h1>Giving ChatGPT New Answer Modes Using !Bangs</h1>
                 </div>
             </div>
         </div>
@@ -51,13 +56,13 @@
                 <div>
                     <p>It all started when I got a Discord ping from a friend:</p>
                     <p>Hmm...<br>What's this?<br>"Absolute Mode"?</p>
-                    <p>This seemed pretty interesting to me, so I dropped what I was doing and headed over to <a href="https://chatgpt.com/" target="_blank">ChatGPT.com</a>.</p>
+                    <p>This seemed pretty interesting to me, so I dropped what I was doing and headed over to my favorite clanker.</p>
                 </div>
                 <figure><img src="redanils-message.png" class="zoomable" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
             </div>
 
             <h3><i class="fa-solid fa-bolt"></i>Absolute Mode</h3>
-            <p>I started a new chat and pasted in the System Instruction, and WOW!</p>
+            <p>I started a new chat and pasted in the System Instruction, and <b><em>WOW!</em></b></p>
             <figure>
                 <video src="absolute-mode.mp4" class="zoomable" autoplay muted playsinline preload="auto" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" loop>
             </figure>
@@ -68,18 +73,18 @@
             <div class="row">
                 <figure class="rigid limit" style="flex: 0.5;"><img src="bangs-example.png" class="zoomable" alt="A DuckDuckGo searchbox with several examples of bangs"></figure>
                 <div>
-                    <p>Bangs are a concept made popular by <a href="https://duckduckgo.com/bang" target="_blank">DuckDuckGo</a>, where you can use special commands (called bangs) to quickly search specific websites.<br>An example:</p>
+                    <p>Bangs are a concept made popular by <a href="https://duckduckgo.com/bang" target="_blank" rel="noopener noreferrer">DuckDuckGo</a>, where you can use special commands (called bangs) to quickly search specific websites.<br>An example:</p>
                     <div class="code-block wrapped copyable">
                         <pre data-header="Search"><code><span class="input">!yt</span> NoomStuff</code></pre>
                     </div>
                     <p>This command would take you directly to YouTube search results page for "NoomStuff". There are many different bangs depending on your browser or search engine, like <span class="code-snippet">!w</span> for Wikipedia, <span class="code-snippet">!g</span> for Google or <span class="code-snippet">!gh</span> for GitHub.</p>
                 </div>
             </div>
-            <p>Since I recently switched to <a href="https://helium.computer" target="_blank">Helium Browser</a> I've been having a blast using bangs as they are built into the searchbar.</p>
+            <p>Since I recently switched to <a href="https://helium.computer" target="_blank" rel="noopener noreferrer">Helium Browser</a> I've been having a blast Using !Bangs as they are built directly into the searchbar.</p>
             <p>This combined with the "Absolute Mode" prompt I just messed around with got me thinking...<br>What if I try to add bangs to ChatGPT conversations?</p>
 
             <h3><i class="fa-solid fa-gears"></i>Making new personalities with Custom Instructions</h3>
-            <p>Wouldn't it be cool if you could control the way ChatGPT responds using bangs? I thought so!<br>So I spent a good 1-2 hours creating a new Personalisation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
+            <p>Wouldn't it be cool if you could control the way ChatGPT responds Using !Bangs? I thought so!<br>So I spent a good 1-2 hours creating a new Personalisation Prompt that tells ChatGPT what bangs are and how to respond to them.</p>
             <p>Now to just paste it into the Custom Instructions aaaand:</p>
             <figure class="rigid limit"><img src="character-limit.png" class="zoomable" alt="A Discord message from RedAnil: '@NoomStuff Throw this into ChatGPT and look how efficient it suddenly answers:'"></figure>
             <p>Oh... Character limit.</p>
@@ -188,12 +193,12 @@ Goal: user learns something new</code></pre>
         <section>
             <article id="post-end">
                 <div>
-                    <h3>Thanks for reading!</h3>
-                    <h6>Consider checking these out.</h6>
+                    <h3>Thanks a lot for reading!</h3>
+                    <h6>Consider checking out more from me if you liked it.</h6>
                 </div>
                 <div class="button-group">
                     <a href="https://www.noomstuff.com" class="button"><i class="fa-solid fa-globe"></i> NoomStuff.com</a>
-                    <a href="../../" class="button"><i class="fa-solid fa-arrow-left"></i> All Posts</a>
+                    <a href="/" class="button"><i class="fa-solid fa-arrow-left"></i> More Posts</a>
                     <a href="https://links.noomstuff.com" class="button"><i class="fa-solid fa-heart"></i> My Socials</a>
                 </div>
             </article>

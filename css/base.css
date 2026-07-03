@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&family=Noto+Sans+JP:wght@100..900&display=swap');
 
 :root {
     --primary-color: #f73878;
@@ -11,15 +11,18 @@
     --primary-color-dark: #231117;
     --secondary-color-dark: #191928;
 
+    --accent-color: #c369d7;
+    --accent-color-dark: #573f5c;
+
     --background-color: #0c080e;
     --background-color-light: #16101a;
     --background-gradient: linear-gradient(145deg, var(--secondary-color-dark) 0%, var(--background-color-light) 50%, var(--primary-color-dark) 100%);
 
     --text-color: #fff;
-    --text-color-light: rgba(255, 255, 255, 0.8);
-    --text-color-lighter: rgba(255, 255, 255, 0.6);
+    --text-color-light: rgba(255, 255, 255, 0.85);
+    --text-color-lighter: rgba(255, 255, 255, 0.7);
 
-    --font-family: "Noto Sans JP", "Roboto", Helvetica, Arial, sans-serif;
+    --font-family: "Quicksand", "Roboto", Helvetica, Arial, sans-serif;
 
     --spacing-1: 0.5rem;
     --spacing-2: 1rem;
@@ -61,14 +64,6 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     font-size: 1rem;
-
-    @media screen and (max-width: 640px) {
-        font-size: 1rem;
-    }
-
-    @media screen and (max-width: 480px) {
-        font-size: 0.9rem;
-    }
 }
 
 body {
@@ -200,6 +195,15 @@ h3 {
     margin-bottom: 1rem;
 }
 
+h4 {
+    font-size: 1.25em;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
 h6 {
     font-size: 0.9em;
     font-weight: 300;
@@ -212,22 +216,26 @@ p {
     color: var(--text-color-light);
     font-size: 1.1em;
     font-weight: 400;
-
     line-height: 1.7;
     margin: 0;
     margin: 1rem 0;
+
+    @media screen and (min-width: 1080px) {
+        font-size: 1.15rem;
+    }
 }
 
 a {
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     transition: color 0.3s ease, border 0.3s ease;
-    border-bottom: 2px solid var(--primary-color-dark);
+    padding-bottom: 0.15rem;
+    border-bottom: 2px solid var(--accent-color-dark);
 }
 
 a:hover {
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 b {
@@ -272,12 +280,12 @@ ol {
 }
 
 ul li::marker {
-    color: var(--primary-color);
+    color: var(--accent-color-dark);
     font-size: 1.2em;
 }
 
 ol li::marker {
-    color: var(--primary-color);
+    color: var(--accent-color-dark);
     font-weight: 600;
 }
 
@@ -325,177 +333,6 @@ ol li::marker {
     flex: 1;
 }
 
-
-/* ===== Code Blocks ===== */
-.code-snippet {
-    background: var(--background-color-light) !important;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    padding: 0.2rem 0.4rem;
-    border-radius: var(--spacing-1);
-}
-
-.code-block {
-    position: relative;
-    margin: var(--spacing-2) 0 !important;
-    padding: 0;
-    width: 100%;
-    border-radius: var(--spacing-1);
-}
-
-.code-block-toolbar {
-    position: sticky;
-    top: 0;
-    right: 0;
-    height: 0px;
-    width: 100%;
-    z-index: 10;
-}
-
-.code-block-toolbar-buttons {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.5rem;
-    height: 2rem;
-    z-index: 11;
-}
-
-.code-block-button .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: black;
-    color: var(--text-color-light);
-    padding: 0.4rem 0.6rem;
-    border-radius: var(--spacing-1);
-    font-size: 0.9em;
-    white-space: nowrap;
-    pointer-events: none;
-    transition: opacity 0.2s, visibility 0.2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.code-block-button:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-}
-
-.code-block pre {
-    position: relative;
-    background: var(--background-color-light) !important;
-    white-space: pre;
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
-    padding: 1rem !important;
-    margin: 0 !important;
-    border-radius: var(--spacing-1);
-}
-
-.code-block code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 1em;
-    padding: 0 !important;
-    margin: 0 !important;
-    text-align: left;
-    background: none;
-    padding: 0;
-    color: #ccc;
-    background: none;
-    white-space: pre;
-    overflow-x: scroll;
-    border-radius: var(--spacing-1);
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-}
-
-.code-block code .input {
-    color: #8ef;
-}
-
-.code-block.wrapped pre code {
-    white-space: pre-wrap !important;
-}
-
-.code-block.collapsible pre {
-    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.75, 1);
-    max-height: 300px;
-    overflow-y: hidden;
-}
-
-.code-block.collapsible:not(.expanded)::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(0deg, var(--background-color-light), transparent);
-    border-radius: var(--spacing-1);
-    pointer-events: none;
-}
-
-.code-block.collapsible.expanded::after {
-    display: none;
-}
-
-.code-block-button {
-    background: var(--background-color-light);
-    color: var(--text-color-lighter);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: var(--spacing-1);
-    border: none;
-    font-size: 1em;
-    transition: background 0.2s, color 0.2s;
-}
-
-.code-block-button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-color);
-}
-
-.code-block pre[data-header] {
-    position: relative;
-}
-
-.code-block pre[data-header] {
-    padding-top: 2rem !important;
-}
-
-.code-block pre[data-header]::before {
-    content: attr(data-header);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 400;
-    text-align: left;
-    color: rgb(255, 255, 255, 0.4);
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
-    font-family: var(--font-family);
-    user-select: none;
-}
 
 /* ===== Animation ===== */
 @keyframes backgroundScroll {
