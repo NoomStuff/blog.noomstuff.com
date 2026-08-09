@@ -38,19 +38,6 @@
     text-shadow: 2px 2px 2px var(--background-color);
 }
 
-#progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    opacity: 0.75;
-    width: 0;
-    background: linear-gradient(90deg, var(--primary-color-light), var(--secondary-color-light));
-    z-index: 9999;
-    border-bottom-right-radius: 4px;
-    transition: width 0.25s cubic-bezier(0.2, 0.8, 0.3, 1.4);
-}
-
 html,
 body {
     scroll-behavior: smooth;
@@ -84,10 +71,6 @@ main>div {
 main {
     min-height: 100vh;
     margin-bottom: 2rem;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 section {

@@ -1,6 +1,87 @@
 const desktopViewport = window.matchMedia("(min-width: 769px)");
 
+const HEADER_LINK_STYLES = `
+.post-content h2 i.header-link-copy,
+.post-content h3 i.header-link-copy {
+    cursor: pointer;
+    transition: opacity 150ms ease, scale 200ms cubic-bezier(0.1, 2, 0.5, 1);
+}
+
+.post-content h2 i.header-link-copy:hover,
+.post-content h2 i.header-link-copy:focus-visible,
+.post-content h3 i.header-link-copy:hover,
+.post-content h3 i.header-link-copy:focus-visible {
+    opacity: 0.8;
+    scale: 1.2;
+}
+
+.post-content h2 i.header-link-copy.copied,
+.post-content h3 i.header-link-copy.copied {
+    opacity: 1;
+    scale: 1.15;
+}
+
+.header-link-copy:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 1.5rem;
+}
+
+.notice {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    padding: 0 0.5rem;
+    border-radius: 1.5rem;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5;
+    text-wrap: nowrap;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transform: translate(-50%, 0.25rem);
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.notice::before {
+    content: '';
+    position: absolute;
+    background-color: black;
+    height: 10px;
+    width: 10px;
+    top: -5px;
+    left: calc(50% - 5px);
+    rotate: 45deg;
+}
+
+.notice.visible {
+    opacity: 1;
+    transform: translate(-50%, 0.5rem);
+}
+
+@media screen and (max-width: 768px) {
+    .header-link-copy,
+    .header-link-copy .notice {
+        display: none;
+    }
+}
+`;
+
 const copyText = async (value) => {
+    if (navigator.clipboard && window.isSecureContext) {
+        try {
+            await navigator.clipboard.writeText(value);
+            return;
+        } catch {
+            // Fall through to the legacy copy method.
+        }
+    }
+
     const textarea = document.createElement("textarea");
     textarea.value = value;
     textarea.setAttribute("readonly", "");
@@ -16,15 +97,14 @@ const copyText = async (value) => {
         return;
     }
 
-    if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(value);
-        return;
-    }
-
     throw new Error("The browser rejected the copy command.");
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    const style = document.createElement("style");
+    style.textContent = HEADER_LINK_STYLES;
+    document.head.appendChild(style);
+
     const headings = document.querySelectorAll(
         ".post-content h2, .post-content h3",
     );
