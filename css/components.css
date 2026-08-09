@@ -42,23 +42,48 @@
     }
 }
 
+#banner:has(.wave-divider) {
+    height: calc(30vh + 50px) !important;
+    padding-bottom: 50px !important;
+}
+
 #post #banner {
     height: 60vh;
     justify-content: end;
-    padding-bottom: var(--spacing-3);
+    padding-bottom: 2rem;
 
     h1 {
-        padding-bottom: var(--spacing-2);
-        padding-right: var(--spacing-1);
+        padding-bottom: 1rem;
+        padding-right: 0.5rem;
         width: fit-content;
         border-bottom: var(--border-divider);
     }
 }
 
+#banner::before {
+    content: '';
+    position: absolute;
+    top: -32px;
+    left: -32px;
+    width: calc(100vw + 64px);
+    height: calc(100vh + 64px);
+    background-image: url('../media/dot-background.svg');
+    background-size: 32px;
+    background-repeat: repeat;
+    z-index: 0;
+    opacity: 0.05;
+    pointer-events: none;
+
+    animation: backgroundScroll 8s linear infinite;
+
+    will-change: transform;
+    transform: translate(0, 0);
+}
+
 .post-back {
     position: absolute;
-    top: var(--spacing-2);
-    left: var(--spacing-2);
+    top: 1rem;
+    left: 1rem;
     width: 1.1rem;
     height: 1.1rem;
     z-index: 2;
@@ -90,27 +115,6 @@
     }
 }
 
-#banner::before {
-    content: '';
-    position: absolute;
-    top: -32px;
-    left: -32px;
-    width: calc(100vw + 64px);
-    height: calc(100vh + 64px);
-    background-image: url('../media/dot-background.svg');
-    background-size: 32px;
-    background-repeat: repeat;
-    z-index: 0;
-    opacity: 0.05;
-    pointer-events: none;
-
-    animation: backgroundScroll 8s linear infinite;
-
-    will-change: transform;
-    transform: translate(0, 0);
-}
-
-
 #post-title {
     position: relative;
     flex: 0 0 auto;
@@ -126,14 +130,15 @@
         max-width: 100% !important;
 
         &>div {
-            padding: var(--spacing-2) var(--spacing-3) !important;
+            padding: 1rem 2rem !important;
         }
     }
 
     &>div {
         background-color: rgba(0, 0, 0, 0.5);
-        padding: var(--spacing-2) var(--spacing-3) var(--spacing-2) 0;
+        padding: 1rem 2rem 1rem 0;
         width: fit-content;
+        border-radius: 0 3rem 3rem 0;
     }
 
     &>div::before {
@@ -161,7 +166,7 @@
         height: 100%;
         object-fit: contain;
         object-position: center;
-        border-radius: var(--spacing-2);
+        border-radius: 3rem;
     }
 }
 
@@ -173,9 +178,9 @@
     justify-content: center;
     align-items: center;
     text-align: left;
-    gap: var(--spacing-2);
-    padding: var(--spacing-2);
-    border-radius: var(--spacing-2);
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 3rem;
     background-color: var(--background-color-light);
 }
 
@@ -188,7 +193,7 @@
 .flex-content {
     display: flex;
     flex-direction: row;
-    gap: var(--spacing-3);
+    gap: 2rem;
     align-items: center;
     width: 100%;
 }
@@ -196,15 +201,15 @@
 .grid-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--spacing-3);
+    gap: 2rem;
     width: 100%;
 }
 
 .posts {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-3);
-    margin: var(--spacing-3) 0;
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
 
@@ -212,100 +217,28 @@
 .tile {
     position: relative;
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2);
-}
-
-.tile::before {
-    content: '';
-    position: absolute;
-    background-color: var(--background-color-light);
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--spacing-1);
-    transition: transform 0.3s ease, width 0.3s ease, height, 0.3s ease, opacity 0.3s ease;
-    scale: 1;
-    opacity: 0;
-}
-
-.tile:hover::before {
-    transform: translate(calc(var(--spacing-3) / -2),
-            calc(var(--spacing-3) / -2));
-    width: calc(100% + var(--spacing-3));
-    height: calc(100% + var(--spacing-3));
-    opacity: 1;
-}
-
-@media screen and (max-width: 768px) {
-    .tile:hover .button {
-        text-decoration: none;
-        background-position: left;
-        border: 1px solid transparent;
-        color: var(--text-color);
+    flex-direction: row;
+    gap: 2rem;
+    
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
     }
 }
 
 .tile>div {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-2);
+    gap: 1rem;
     flex: 1;
 }
 
-.tile>figure {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    aspect-ratio: 4/3;
-    border-radius: var(--spacing-1);
-    overflow: hidden;
-}
-
-.tile>figure * {
-    width: 100%;
-}
-
-.tile>figure:has(video)>* {
-    position: absolute;
-}
-
-.tile>figure:has(video)>img {
-    z-index: 1;
-    scale: 1;
-    opacity: 1;
-    transition: scale 0.3s cubic-bezier(0.1, 0.2, 0.2, 1), opacity 0.3s cubic-bezier(0, 0.2, 0.2, 1);
-}
-
-.tile:has(video):hover>figure img {
-    scale: 1.05;
-    opacity: 0;
-}
-
-.tile * {
-    margin: 0;
-}
-
-.blog.tile {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: var(--spacing-3);
-
-    @media screen and (max-width: 768px) {
-        flex-direction: column-reverse;
-    }
-}
-
-.blog.tile p {
+.tile p {
     color: var(--text-color-light);
     font-weight: 300;
     line-height: 1.5;
 }
 
-.blog.tile>figure {
+.tile>figure {
     position: relative;
     display: flex;
     align-self: center;
@@ -318,19 +251,53 @@
     width: 400px;
     max-width: 100%;
 
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
     overflow: hidden;
 }
 
+.tile * {
+    margin: 0;
+}
+
+.tile::before {
+    content: '';
+    position: absolute;
+    background-color: var(--background-color-light);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    transition: transform 0.3s ease, width 0.3s ease, height, 0.3s ease, opacity 0.3s ease;
+    scale: 1;
+    opacity: 0;
+}
+
+.tile:hover::before {
+    transform: translate(calc(2rem / -2),
+            calc(2rem / -2));
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    opacity: 1;
+}
+
 @media screen and (max-width: 768px) {
-    .blog.tile>figure {
+    .tile:hover .button {
+        text-decoration: none;
+        background-position: left;
+        border: 1px solid transparent;
+        color: var(--text-color);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tile>figure {
         width: 100%;
         max-height: 300px;
         min-width: unset;
         aspect-ratio: unset;
     }
 
-    .blog.tile:hover .button {
+    .tile:hover .button {
         text-decoration: none;
         background-position: left;
         border: 1px solid transparent;
@@ -355,7 +322,7 @@
     margin: 0;
     padding: 0;
     gap: 0;
-    top: var(--spacing-3);
+    top: 2rem;
     right: 0;
 
     @media screen and (max-width: 768px) {
@@ -423,15 +390,15 @@
 .header-link-copy:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
 }
 
 .notice {
     position: absolute;
     top: 95%;
     left: 50%;
-    padding: 0 var(--spacing-1);
-    border-radius: var(--spacing-1);
+    padding: 0 0.5rem;
+    border-radius: 1.5rem;
     background-color: black;
     color: white;
     font-size: 1rem;
@@ -475,9 +442,9 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: var(--spacing-3);
-    padding-top: var(--spacing-2);
-    gap: var(--spacing-2);
+    margin-top: 2rem;
+    padding-top: 1rem;
+    gap: 1rem;
     border-top: var(--border-divider);
 
     * {
@@ -496,15 +463,15 @@
     background: var(--background-color-light) !important;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     padding: 0.2rem 0.4rem;
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
 }
 
 .code-block {
     position: relative;
-    margin: var(--spacing-2) 0 !important;
+    margin: 1rem 0 !important;
     padding: 0;
     width: 100%;
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
 }
 
 .code-block-toolbar {
@@ -538,7 +505,7 @@
     background: black;
     color: var(--text-color-light);
     padding: 0.4rem 0.6rem;
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
     font-size: 0.9em;
     white-space: nowrap;
     pointer-events: none;
@@ -560,7 +527,7 @@
     width: 100%;
     padding: 1rem !important;
     margin: 0 !important;
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
 }
 
 .code-block code {
@@ -575,7 +542,7 @@
     background: none;
     white-space: pre;
     overflow-x: scroll;
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
@@ -611,7 +578,7 @@
     width: 100%;
     height: 100px;
     background: linear-gradient(0deg, var(--background-color-light), transparent);
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
     pointer-events: none;
     opacity: 1;
     transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
@@ -630,7 +597,7 @@
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
     border: none;
     font-size: 1em;
     transition: background 0.2s, color 0.2s;
@@ -684,19 +651,19 @@
 /* ===== Folds ===== */
 .fold {
     width: 100%;
-    margin: var(--spacing-2) 0;
+    margin: 1rem 0;
     overflow: hidden;
     background: var(--background-color-light);
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
 }
 
 .fold-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--spacing-2);
+    gap: 1rem;
     width: 100%;
-    padding: var(--spacing-2);
+    padding: 1rem;
     color: var(--text-color);
     font: inherit;
     font-weight: 700;
@@ -743,18 +710,18 @@
 }
 
 .fold-content-inner>* {
-    margin-right: var(--spacing-2);
-    margin-left: var(--spacing-2);
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 .fold-content-inner> :first-child {
     margin-top: 0;
-    padding-top: var(--spacing-1);
+    padding-top: 0.5rem;
 }
 
 .fold-content-inner> :last-child {
     margin-bottom: 0;
-    padding-bottom: var(--spacing-2);
+    padding-bottom: 1rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -24,15 +24,12 @@
 
     --font-family: "Quicksand", "Roboto", Helvetica, Arial, sans-serif;
 
-    --spacing-1: 0.5rem;
-    --spacing-2: 1rem;
-    --spacing-3: 2rem;
-
     --border-divider: 2px solid var(--background-color-light)
 }
 
 * {
     box-sizing: border-box;
+    corner-shape: squircle;
 }
 
 ::selection {
@@ -86,7 +83,7 @@ main>div {
 
 main {
     min-height: 100vh;
-    margin-bottom: var(--spacing-3);
+    margin-bottom: 2rem;
 }
 
 * {
@@ -104,7 +101,7 @@ section {
 
     @media screen and (max-width: 768px) {
         max-width: 100% !important;
-        padding: 0 var(--spacing-3) !important;
+        padding: 0 2rem !important;
         border-radius: 0px !important;
     }
 }
@@ -116,7 +113,7 @@ section {
 .row {
     display: flex;
     flex-direction: rows;
-    gap: var(--spacing-3);
+    gap: 2rem;
 
     :first-child {
         margin-top: 0;
@@ -128,7 +125,7 @@ section {
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
-        gap: var(--spacing-2);
+        gap: 1rem;
     }
 }
 
@@ -147,7 +144,7 @@ figure {
 }
 
 figure>* {
-    border-radius: var(--spacing-1);
+    border-radius: 1.5rem;
     max-width: 100%;
     max-height: 100%;
 }
@@ -225,16 +222,16 @@ p {
     }
 }
 
-a {
+a:not(.button) {
     color: var(--text-color);
     font-weight: 600;
     text-decoration: none;
-    transition: color 0.3s ease, border 0.3s ease;
-    padding-bottom: 0.15rem;
-    border-bottom: 2px solid var(--accent-color-dark);
+    transition: color 300ms ease, border 300ms ease;
+    border-bottom: 2px solid var(--primary-color-dark);
 }
 
-a:hover {
+a:not(.button):hover {
+    color: white;
     border-bottom: 2px solid var(--accent-color);
 }
 
@@ -242,20 +239,7 @@ b {
     color: var(--text-color);
 }
 
-i {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em;
-    scale: 1.25;
-    color: inherit;
-}
 
-i.fa-brands {
-    scale: 1.5;
-    margin-right: 0.25rem;
-    margin-left: -0.25rem;
-}
 
 
 /* ===== Lists ===== */
@@ -296,43 +280,58 @@ ol li::marker {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-1);
-    gap: var(--spacing-1);
-    font-weight: 800;
-    letter-spacing: 0.01em;
+    padding: 0.6rem;
+    font-size: 1.1em;
+    font-weight: 900;
     text-align: center;
     text-shadow: 2px 2px 0px var(--background-color);
+    text-decoration: none;
     color: var(--text-color);
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 33%, transparent 65%);
-    border-radius: var(--spacing-1);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 32%, var(--secondary-color-dark) 64%);
+    border-radius: 4.5rem;
     cursor: pointer;
     background-size: 300% 100%;
-    transition: background-position 0.6s cubic-bezier(0.25, 1, 0.75, 1), border-color 0.6s cubic-bezier(0.25, 1, 0.75, 1), color 0.6s cubic-bezier(0.25, 1, 0.75, 1);
-    border: 1px solid var(--primary-color);
-    background-position: right;
+    transition: scale 500ms cubic-bezier(0.2, 2.4, 0.2, 1), background-position 750ms cubic-bezier(0.25, 1, 0.75, 1), gap 500ms cubic-bezier(0.2, 2.4, 0.2, 1), letter-spacing 500ms cubic-bezier(0.2, 2.4, 0.2, 1);
+    scale: 1;
+    background-position: 100%;
+    gap: 0.5rem;
+    letter-spacing: 0.015em;
+}
 
-    &:hover {
-        text-decoration: none;
-        background-position: left;
-        border: 1px solid transparent;
-        color: var(--text-color);
-    }
+.button:hover {
+    scale: 1.02;
+    background-position: 0%;
+    gap: 0.6rem;
+    letter-spacing: 0.075em;
+}
+
+.button:active {
+    scale: 0.98;
+}
+
+.button i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1em;
+    color: inherit;
 }
 
 .button-group {
     display: flex;
     flex-direction: row !important;
-    gap: var(--spacing-2);
-
-    @media screen and (max-width: 640px) {
-        flex-direction: column !important;
-    }
+    gap: 1rem;
 }
 
 .button-group>* {
     flex: 1;
 }
 
+/* ===== Dividers & Spacers ===== */
+.bottom {
+    margin-top: auto !important;
+}
 
 /* ===== Animation ===== */
 @keyframes backgroundScroll {

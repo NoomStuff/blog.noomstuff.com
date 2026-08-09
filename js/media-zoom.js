@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () =>
             opacity: 0;
             pointer-events: none;
             cursor: zoom-out !important;
-            transition: opacity 0.25s cubic-bezier(0.25, 1, 0.75, 1);
+            transition: opacity 0.25s cubic-bezier(0.25, 1.5, 0.75, 1);
         }
 
         .media-zoom-overlay.active {
@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", () =>
             max-width: 90vw;
             max-height: 90vh;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
+            border-radius: 1.5rem;
             cursor: zoom-out !important;
-            transition: transform 0.25s cubic-bezier(0.25, 1, 0.75, 1);
+            transition: transform 0.25s cubic-bezier(0.25, 1.5, 0.75, 1);
         }
 
         @media screen and (max-width: 600px) {
