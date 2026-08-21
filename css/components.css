@@ -213,6 +213,27 @@
 }
 
 
+/* ===== Animate in ===== */
+
+.animate-in {
+    animation: transition-in cubic-bezier(0.25, 1, 0.75, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+@keyframes transition-in {
+    from {
+        transform: translateY(5rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
 /* ===== Tiles ===== */
 .tile {
     position: relative;
