@@ -301,31 +301,6 @@
     opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
-    .tile:hover .button {
-        text-decoration: none;
-        background-position: left;
-        border: 1px solid transparent;
-        color: var(--text-color);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .tile>figure {
-        width: 100%;
-        max-height: 300px;
-        min-width: unset;
-        aspect-ratio: unset;
-    }
-
-    .tile:hover .button {
-        text-decoration: none;
-        background-position: left;
-        border: 1px solid transparent;
-        color: var(--text-color);
-    }
-}
-
 /* ===== Post ===== */
 .post-date {
     font-size: 0.9em;
