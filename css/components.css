@@ -1,3 +1,22 @@
+/* ===== Animate in ===== */
+.animate-in {
+    animation: transition-in cubic-bezier(0.25, 1, 0.75, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+@keyframes transition-in {
+    from {
+        transform: translateY(100px) scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
 /* ===== Banner ===== */
 #banner {
     position: relative;
@@ -213,34 +232,13 @@
 }
 
 
-/* ===== Animate in ===== */
-
-.animate-in {
-    animation: transition-in cubic-bezier(0.25, 1, 0.75, 1) both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 50%;
-}
-
-@keyframes transition-in {
-    from {
-        transform: translateY(5rem);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-
 /* ===== Tiles ===== */
 .tile {
     position: relative;
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    
+
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;
     }
@@ -274,6 +272,7 @@
 
     border-radius: 1.5rem;
     overflow: hidden;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .tile * {
@@ -285,6 +284,8 @@
     position: absolute;
     background-color: var(--background-color-light);
     z-index: -1;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border-radius: 1.5rem;
@@ -294,8 +295,7 @@
 }
 
 .tile:hover::before {
-    transform: translate(calc(2rem / -2),
-            calc(2rem / -2));
+    transform: translate(calc(2rem / -2), calc(2rem / -2));
     width: calc(100% + 2rem);
     height: calc(100% + 2rem);
     opacity: 1;
@@ -382,4 +382,3 @@
     font-weight: 700;
     margin-bottom: 0.25rem;
 }
-
