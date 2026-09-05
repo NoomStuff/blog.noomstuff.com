@@ -18,6 +18,9 @@
     <script>
         const lenis = new Lenis({
             allowNestedScroll: true,
+            // While the page is scroll-locked via body overflow, Lenis must not
+            // keep scrolling it programmatically.
+            prevent: () => document.body.style.overflow === "hidden",
         });
 
         function raf(time) {

@@ -1,32 +1,33 @@
 {
+    "trailingSlash": true,
     "redirects": [
         {
-            "source": "/post",
+            "source": "/post/",
             "destination": "/",
             "permanent": true
         },
         {
-            "source": "/posts",
+            "source": "/posts/",
             "destination": "/",
             "permanent": true
         },
         {
-            "source": "/home",
+            "source": "/home/",
             "destination": "https://www.noomstuff.com",
             "permanent": true
         },
         {
-            "source": "/link",
+            "source": "/link/",
             "destination": "https://www.noomstuff.com/linktree.html",
             "permanent": true
         },
         {
-            "source": "/links",
+            "source": "/links/",
             "destination": "https://www.noomstuff.com/linktree.html",
             "permanent": true
         },
         {
-            "source": "/linktree",
+            "source": "/linktree/",
             "destination": "https://www.noomstuff.com/linktree.html",
             "permanent": true
         }
